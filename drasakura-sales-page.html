@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Wellness: Beyond Chiropractic | Dr. Debra Asakura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero .subheadline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .hero .doctor-info {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .hero .equipment {
+            font-size: 1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        /* Problem Section */
+        .problem {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .problem h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .problem p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #555;
+        }
+        /* Solution Section */
+        .solution {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .solution h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .solution-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .solution-item h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        /* Equipment Section */
+        .equipment-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .equipment-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .equipment-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .equipment-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        /* Offer Section */
+        .offer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .offer h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .offer-box {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .price {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .price span {
+            font-size: 0.5em;
+        }
+        .guarantee {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>FINALLY... A Doctor Who Looks At Your<br><span style="color: #ffd700;">WHOLE BODY</span></h1>
+        <p class="subheadline">Not Just Your Spine</p>
+        <p class="doctor-info">
+            <strong>Dr. Debra Asakura, DC</strong><br>
+            30+ Years Helping Patients Achieve Total Wellness
+        </p>
+        <p class="equipment">
+            Using Advanced Technology: ESM • Compression Therapy • Red Light • Shockwave
+        </p>
+        <a href="#offer" class="cta-button">YES! I Want The $49 Initial Consultation</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem">
+    <div class="container">
+        <h2>Are You Tired of Treating Symptoms Instead of Finding the Root Cause?</h2>
+        <p>Most doctors give you a 10-minute visit and a prescription. They treat your pain, but never ask WHY you have pain in the first place.</p>
+        <p>You deserve better. You deserve a doctor who looks at your whole body—your nutrition, your lifestyle, your movement patterns, and yes, your spine too.</p>
+        <p><strong>That's functional wellness. And that's exactly what we do.</strong></p>
+    </div>
+</section>
+
+<!-- Solution Section -->
+<section class="solution">
+    <div class="container">
+        <h2>Functional Wellness: Beyond Adjustments to Total Health</h2>
+        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 40px;">We don't just crack your back and send you home. We use a comprehensive approach that addresses the root cause of your health issues.</p>
+        
+        <div class="solution-grid">
+            <div class="solution-item">
+                <h3>🎯 Root Cause Analysis</h3>
+                <p>We dig deep to find WHY you're experiencing pain or dysfunction, not just mask the symptoms.</p>
+            </div>
+            <div class="solution-item">
+                <h3>🔬 Advanced Technology</h3>
+                <p>Electrical Stimulation, Compression Therapy, Red Light Cold Fusion, and Shockwave Therapy.</p>
+            </div>
+            <div class="solution-item">
+                <h3>📋 Personalized Plans</h3>
+                <p>No cookie-cutter treatments. Your plan is tailored to YOUR body, YOUR goals, YOUR lifestyle.</p>
+            </div>
+            <div class="solution-item">
+                <h3>💪 Whole-Body Approach</h3>
+                <p>We look at nutrition, movement, stress, and structure together—not in isolation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Equipment Section -->
+<section class="equipment-section">
+    <div class="container">
+        <h2>State-of-the-Art Equipment</h2>
+        <div class="equipment-grid">
+            <div class="equipment-item">
+                <img src="https://via.placeholder.com/300x150/667eea/ffffff?text=ESM+Machine" alt="Electrical Stimulation Machine">
+                <h3>Electrical Stimulation</h3>
+                <p>Reduces pain and inflammation while promoting healing.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://via.placeholder.com/300x150/764ba2/ffffff?text=Compression+Table" alt="Compression Table">
+                <h3>Compression Therapy</h3>
+                <p>Improves circulation and speeds recovery.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://via.placeholder.com/300x150/ff6b6b/ffffff?text=Red+Light+Therapy" alt="Red Light Therapy">
+                <h3>Red Light Cold Fusion</h3>
+                <p>Cellular healing at the deepest level.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://via.placeholder.com/300x150/4ecdc4/ffffff?text=Shockwave+Machine" alt="Shockwave Machine">
+                <h3>Shockwave Therapy</h3>
+                <p>Breaks up scar tissue and stimulates regeneration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Offer Section -->
+<section class="offer" id="offer">
+    <div class="container">
+        <h2>Start Your Journey to Total Wellness Today</h2>
+        <div class="offer-box">
+            <p style="font-size: 1.3em;">Initial Functional Wellness Consultation</p>
+            <div class="price"><span>$</span>49</div>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Regular Price: $200</p>
+            <a href="#" class="cta-button" style="background: #ffd700; color: #333;">Claim Your $49 Consultation Now</a>
+            
+            <div class="guarantee">
+                <h3>🛡️ 100% Satisfaction Guarantee</h3>
+                <p>If you're not completely satisfied with your consultation, we'll refund your $49. No questions asked.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        <p>Functional Wellness | Chiropractic Care | Advanced Technology</p>
+    </div>
+</footer>
+
+</body>
+</html>
