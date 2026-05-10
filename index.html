@@ -3,239 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venture Works Inc. - Workspace</title>
+    <title>Dr. Debra Asakura | Beyond Chiropractic - Functional Wellness</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #2d3748;
+            background: #fff;
         }
-        .container {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        h2 {
-            color: #764ba2;
-            margin: 30px 0 15px 0;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .file-list {
-            list-style: none;
-        }
-        .file-list li {
-            margin: 12px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .file-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .file-list a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
+        .header-content {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
         }
-        .file-list a:hover {
-            color: #764ba2;
+        .logo {
+            height: 70px;
         }
-        .file-desc {
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 5px;
-            margin-left: 26px;
+        .logo img {
+            height: 100%;
+            width: auto;
         }
-        .icon {
-            font-size: 1.2em;
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        footer {
-            margin-top: 40px;
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(124,154,109,0.9) 0%, rgba(212,175,55,0.85) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 80px;
             text-align: center;
-            color: #999;
-            font-size: 0.9em;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero h1 span {
+            color: #f4e4bc;
+        }
+        .hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .btn {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* About Preview */
+        .about-preview {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .about-content h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+        .about-content h2 span {
+            color: #d4af37;
+        }
+        .about-content p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Services Preview */
+        .services-preview {
+            padding: 100px 0;
+            background: #faf7f0;
+        }
+        .services-preview h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .service-card h3 {
+            font-size: 1.2em;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .service-card h3 span {
+            color: #d4af37;
+        }
+        .service-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .why-us h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .why-card h3 {
+            font-size: 1.4em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .why-card h3 span {
+            color: #7c9a6d;
+        }
+        .why-card p {
+            color: #666;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #2d3748;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 Venture Works Inc.</h1>
-        <p class="subtitle">OpenClaw Workspace Files</p>
-
-        <h2>📊 Business Data</h2>
-        <ul class="file-list">
-            <li>
-                <a href="quanivo-faq-schema.json" download>
-                    <span class="icon">📋</span> quanivo-faq-schema.json
-                </a>
-                <p class="file-desc">FAQ schema for Quanivo Wellness website</p>
-            </li>
-            <li>
-                <a href="quanivo-organization-schema.json" download>
-                    <span class="icon">🏢</span> quanivo-organization-schema.json
-                </a>
-                <p class="file-desc">Organization schema for Quanivo Wellness + Venture Works</p>
-            </li>
-            <li>
-                <a href="quanivo-product-pod-schema.json" download>
-                    <span class="icon">🛏️</span> quanivo-product-pod-schema.json
-                </a>
-                <p class="file-desc">Product schema for Bio-Wellness Pod</p>
-            </li>
-            <li>
-                <a href="quanivo-product-recliner-schema.json" download>
-                    <span class="icon">🪑</span> quanivo-product-recliner-schema.json
-                </a>
-                <p class="file-desc">Product schema for Bio-Wellness Energy Recliner</p>
-            </li>
-            <li>
-                <a href="quanivo-product-cryobike-schema.json" download>
-                    <span class="icon">🚴</span> quanivo-product-cryobike-schema.json
-                </a>
-                <p class="file-desc">Product schema for Cryo Bike</p>
-            </li>
-            <li>
-                <a href="quanivo-product-cryotreadmill-schema.json" download>
-                    <span class="icon">🏃</span> quanivo-product-cryotreadmill-schema.json
-                </a>
-                <p class="file-desc">Product schema for Cryo Treadmill</p>
-            </li>
-            <li>
-                <a href="quanivo-product-hyperbaric-schema.json" download>
-                    <span class="icon">🫁</span> quanivo-product-hyperbaric-schema.json
-                </a>
-                <p class="file-desc">Product schema for Hyperbaric Chamber</p>
-            </li>
-            <li>
-                <a href="quanivo-product-massagechair-schema.json" download>
-                    <span class="icon">💺</span> quanivo-product-massagechair-schema.json
-                </a>
-                <p class="file-desc">Product schema for Zero Gravity Massage Chair</p>
-            </li>
-            <li>
-                <a href="quanivo-product-redlight-schema.json" download>
-                    <span class="icon">🔴</span> quanivo-product-redlight-schema.json
-                </a>
-                <p class="file-desc">Product schema for Red Light Therapy Panels</p>
-            </li>
-            <li>
-                <a href="quanivo-localbusiness-schema.json" download>
-                    <span class="icon">📍</span> quanivo-localbusiness-schema.json
-                </a>
-                <p class="file-desc">LocalBusiness schema for Quanivo Wellness</p>
-            </li>
-            <li>
-                <a href="quanivo-blog-schema.json" download>
-                    <span class="icon">📝</span> quanivo-blog-schema.json
-                </a>
-                <p class="file-desc">Blog and Article schema for Quantum Wellness Hub</p>
-            </li>
-            <li>
-                <a href="quanivo-breadcrumb-schema.json" download>
-                    <span class="icon">🧭</span> quanivo-breadcrumb-schema.json
-                </a>
-                <p class="file-desc">Breadcrumb navigation schema</p>
-            </li>
-            <li>
-                <a href="wellness-spas-north-county-2026-05-05.csv" download>
-                    <span class="icon">📊</span> wellness-spas-north-county-2026-05-05.csv
-                </a>
-                <p class="file-desc">Wellness spa leads in North County San Diego</p>
-            </li>
-            <li>
-                <a href="priority_leads.json" download>
-                    <span class="icon">⭐</span> priority_leads.json
-                </a>
-                <p class="file-desc">Priority lead data for outreach</p>
-            </li>
-        </ul>
-
-        <h2>📝 Documentation</h2>
-        <ul class="file-list">
-            <li>
-                <a href="SOUL.md" download>
-                    <span class="icon">🧠</span> SOUL.md
-                </a>
-                <p class="file-desc">AI assistant personality and operating principles</p>
-            </li>
-            <li>
-                <a href="USER.md" download>
-                    <span class="icon">👤</span> USER.md
-                </a>
-                <p class="file-desc">User profile and preferences</p>
-            </li>
-            <li>
-                <a href="AGENTS.md" download>
-                    <span class="icon">🤖</span> AGENTS.md
-                </a>
-                <p class="file-desc">Workspace guidelines for AI agents</p>
-            </li>
-            <li>
-                <a href="README.md" download>
-                    <span class="icon">📖</span> README.md
-                </a>
-                <p class="file-desc">Repository documentation</p>
-            </li>
-        </ul>
-
-        <h2>⚙️ Configuration</h2>
-        <ul class="file-list">
-            <li>
-                <a href="BOOTSTRAP.md" download>
-                    <span class="icon">🚀</span> BOOTSTRAP.md
-                </a>
-                <p class="file-desc">Initial setup instructions</p>
-            </li>
-            <li>
-                <a href="HEARTBEAT.md" download>
-                    <span class="icon">💓</span> HEARTBEAT.md
-                </a>
-                <p class="file-desc">Periodic task checklist</p>
-            </li>
-            <li>
-                <a href="IDENTITY.md" download>
-                    <span class="icon">🎭</span> IDENTITY.md
-                </a>
-                <p class="file-desc">AI identity configuration</p>
-            </li>
-            <li>
-                <a href="TOOLS.md" download>
-                    <span class="icon">🛠️</span> TOOLS.md
-                </a>
-                <p class="file-desc">Tool-specific notes and configurations</p>
-            </li>
-        </ul>
-
-        <footer>
-            <p>Powered by OpenClaw | Venture Works Inc.</p>
-        </footer>
-    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><img src="logo.png" alt="Asakura Beyond Chiropractic"></div>
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Beyond Chiropractic.<br><span>True Wellness.</span></h1>
+            <p>30+ years of functional wellness expertise. Discover the root cause of your health challenges with advanced therapeutic technologies.</p>
+            <a href="#consultation" class="btn">Schedule Your Consultation</a>
+        </div>
+    </section>
+    
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="dr-asakura.png" alt="Dr. Debra Asakura">
+                </div>
+                <div>
+                    <h2>Meet Dr. Debra <span>Asakura</span></h2>
+                    <p>For over 30 years, Dr. Asakura has helped thousands of patients find lasting wellness through functional medicine and advanced therapeutic technologies.</p>
+                    <p>Her approach goes beyond traditional chiropractic care, combining cutting-edge treatments to address the root cause of your health challenges—not just mask symptoms.</p>
+                    <p>Located in San Marcos, California, her practice has become a beacon of hope for those seeking alternatives to conventional medicine's band-aid solutions.</p>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services-preview">
+        <div class="container">
+            <h2>Our Advanced Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Compression <span>Table</span></h3>
+                    <p>Improve circulation and reduce inflammation</p>
+                </div>
+                <div class="service-card">
+                    <h3>Electrical <span>Stimulation</span></h3>
+                    <p>Powerful ESM for pain relief and healing</p>
+                </div>
+                <div class="service-card">
+                    <h3>Therapeutic <span>Ultrasound</span></h3>
+                    <p>Deep tissue healing and recovery</p>
+                </div>
+                <div class="service-card">
+                    <h3>Shockwave <span>Therapy</span></h3>
+                    <p>Non-invasive chronic pain treatment</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cold Laser <span>Therapy</span></h3>
+                    <p>Cellular healing and pain relief</p>
+                </div>
+                <div class="service-card">
+                    <h3>BrainHealth<span>Plus</span></h3>
+                    <p>Brain training for memory and balance</p>
+                </div>
+                <div class="service-card">
+                    <h3>RCCG <span>Screening</span></h3>
+                    <p>Early cancer detection and prevention</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nutritional <span>Consulting</span></h3>
+                    <p>Personalized nutrition for optimal health</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-us">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3><span>30+</span> Years Experience</h3>
+                    <p>Decades of expertise in functional wellness and chiropractic care</p>
+                </div>
+                <div class="why-card">
+                    <h3><span>10,000+</span> Patients Helped</h3>
+                    <p>Thousands of success stories and transformed lives</p>
+                </div>
+                <div class="why-card">
+                    <h3><span>8</span> Advanced Technologies</h3>
+                    <p>Cutting-edge therapeutic equipment for optimal results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="consultation">
+        <div class="container">
+            <h2>Start Your Transformation</h2>
+            <p>Schedule your consultation today and discover what's possible.</p>
+            <a href="#" class="btn-white">Schedule Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
