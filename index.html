@@ -46,146 +46,196 @@
             color: #f4e4bc;
         }
         
-        /* Hero */
+        /* Hero - Full Width with Overlay */
         .hero {
-            background: linear-gradient(135deg, rgba(124,154,109,0.9) 0%, rgba(212,175,55,0.85) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920');
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920');
             background-size: cover;
             background-position: center;
-            padding: 100px 0 80px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(124,154,109,0.75) 50%, rgba(212,175,55,0.7) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
             color: white;
+            max-width: 900px;
+            padding: 0 30px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.2);
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
         }
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
         .hero h1 span {
-            color: #f4e4bc;
+            color: #d4af37;
+            display: block;
         }
         .hero p {
-            font-size: 1.3em;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
         .btn {
             display: inline-block;
             background: #d4af37;
             color: white;
-            padding: 18px 50px;
+            padding: 20px 60px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: transform 0.3s;
+            font-size: 1.1em;
+            transition: all 0.3s;
         }
         .btn:hover {
-            transform: scale(1.05);
+            background: #c9a227;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
-        /* About Preview */
-        .about-preview {
-            padding: 100px 0;
-            background: #fff;
+        /* Stats Bar */
+        .stats-bar {
+            background: #1a1a1a;
+            padding: 60px 0;
+            color: white;
         }
-        .about-content {
+        .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
         }
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-        .about-content h2 {
-            font-size: 2.5em;
-            color: #2d3748;
-            margin-bottom: 25px;
-        }
-        .about-content h2 span {
+        .stat-item h3 {
+            font-size: 3em;
             color: #d4af37;
+            margin-bottom: 10px;
         }
-        .about-content p {
-            color: #555;
+        .stat-item p {
             font-size: 1.1em;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            opacity: 0.9;
         }
         
-        /* Services Preview */
-        .services-preview {
+        /* Featured Services - Horizontal Scroll */
+        .featured-services {
             padding: 100px 0;
             background: #faf7f0;
         }
-        .services-preview h2 {
+        .featured-services h2 {
             text-align: center;
             font-size: 2.5em;
             color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .featured-services > .container > p {
+            text-align: center;
+            color: #666;
             margin-bottom: 60px;
+            font-size: 1.1em;
         }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+        .services-scroll {
+            display: flex;
             gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #d4af37 #f5f0e6;
         }
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
+        .services-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .services-scroll::-webkit-scrollbar-track {
+            background: #f5f0e6;
+            border-radius: 4px;
+        }
+        .services-scroll::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+        .service-item {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
-        .service-card h3 {
-            font-size: 1.2em;
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c9a6d 0%, #d4af37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2em;
+        }
+        .service-item h3 {
+            font-size: 1.3em;
             color: #2d3748;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        .service-card h3 span {
-            color: #d4af37;
-        }
-        .service-card p {
+        .service-item p {
             color: #666;
             font-size: 0.95em;
         }
         
-        /* Why Choose Us */
-        .why-us {
+        /* Testimonial Highlight */
+        .testimonial-highlight {
             padding: 100px 0;
             background: #fff;
-        }
-        .why-us h2 {
             text-align: center;
-            font-size: 2.5em;
+        }
+        .testimonial-highlight blockquote {
+            font-size: 2em;
             color: #2d3748;
-            margin-bottom: 60px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.4;
         }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+        .testimonial-highlight blockquote::before {
+            content: '"';
+            font-size: 3em;
+            color: #d4af37;
+            display: block;
+            margin-bottom: -20px;
         }
-        .why-card {
-            text-align: center;
-            padding: 30px;
-        }
-        .why-card h3 {
-            font-size: 1.4em;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-        .why-card h3 span {
+        .testimonial-author {
             color: #7c9a6d;
-        }
-        .why-card p {
-            color: #666;
+            font-weight: 600;
+            font-size: 1.1em;
         }
         
-        /* CTA */
+        /* CTA Section */
         .cta {
             padding: 100px 0;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            background: linear-gradient(135deg, #7c9a6d 0%, #5a7a4a 100%);
             text-align: center;
             color: white;
         }
@@ -196,6 +246,7 @@
         .cta p {
             font-size: 1.2em;
             margin-bottom: 30px;
+            opacity: 0.95;
         }
         .btn-white {
             display: inline-block;
@@ -205,36 +256,44 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         /* Footer */
         footer {
-            background: #2d3748;
+            background: #1a1a1a;
             color: white;
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0;
+        }
+        footer p {
+            opacity: 0.8;
         }
         
         /* Responsive */
         @media (max-width: 1024px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .services-grid {
+            .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
-            .why-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 3em;
             }
         }
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
-            .services-grid {
+            .stats-grid {
                 grid-template-columns: 1fr;
+            }
+            .testimonial-highlight blockquote {
+                font-size: 1.5em;
             }
             .nav-links {
                 display: none;
@@ -258,94 +317,97 @@
     </header>
     
     <section class="hero">
-        <div class="container">
-            <h1>Beyond Chiropractic.<br><span>True Wellness.</span></h1>
-            <p>30+ years of functional wellness expertise. Discover the root cause of your health challenges with advanced therapeutic technologies.</p>
+        <div class="hero-content">
+            <div class="hero-badge">30+ Years of Excellence</div>
+            <h1>Heal Your Body.<br><span>Reclaim Your Life.</span></h1>
+            <p>Discover the root cause of your health challenges with advanced therapeutic technologies and functional wellness expertise.</p>
             <a href="#consultation" class="btn">Schedule Your Consultation</a>
         </div>
     </section>
     
-    <section class="about-preview">
+    <section class="stats-bar">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="dr-asakura.png" alt="Dr. Debra Asakura">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Years Experience</p>
                 </div>
-                <div>
-                    <h2>Meet Dr. Debra <span>Asakura</span></h2>
-                    <p>For over 30 years, Dr. Asakura has helped thousands of patients find lasting wellness through functional medicine and advanced therapeutic technologies.</p>
-                    <p>Her approach goes beyond traditional chiropractic care, combining cutting-edge treatments to address the root cause of your health challenges—not just mask symptoms.</p>
-                    <p>Located in San Marcos, California, her practice has become a beacon of hope for those seeking alternatives to conventional medicine's band-aid solutions.</p>
-                    <a href="about.html" class="btn">Learn More</a>
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Patients Helped</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Advanced Technologies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Commitment to You</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="services-preview">
+    <section class="featured-services">
         <div class="container">
-            <h2>Our Advanced Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Compression <span>Table</span></h3>
-                    <p>Improve circulation and reduce inflammation</p>
+            <h2>Advanced Therapeutic Services</h2>
+            <p>Cutting-edge treatments tailored to your unique needs</p>
+            <div class="services-scroll">
+                <div class="service-item">
+                    <div class="service-icon">💆</div>
+                    <h3>Compression Therapy</h3>
+                    <p>Improve circulation and reduce inflammation with our advanced compression table technology.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Electrical <span>Stimulation</span></h3>
-                    <p>Powerful ESM for pain relief and healing</p>
+                <div class="service-item">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical Stimulation</h3>
+                    <p>Powerful ESM technology for pain relief, muscle rehabilitation, and tissue healing.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Therapeutic <span>Ultrasound</span></h3>
-                    <p>Deep tissue healing and recovery</p>
+                <div class="service-item">
+                    <div class="service-icon">🔊</div>
+                    <h3>Therapeutic Ultrasound</h3>
+                    <p>Deep tissue healing that breaks down scar tissue and accelerates recovery.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Shockwave <span>Therapy</span></h3>
-                    <p>Non-invasive chronic pain treatment</p>
+                <div class="service-item">
+                    <div class="service-icon">💫</div>
+                    <h3>Shockwave Therapy</h3>
+                    <p>Non-invasive treatment for chronic pain and tissue regeneration.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Cold Laser <span>Therapy</span></h3>
-                    <p>Cellular healing and pain relief</p>
+                <div class="service-item">
+                    <div class="service-icon">🔆</div>
+                    <h3>Cold Laser Therapy</h3>
+                    <p>Painless cellular healing and natural pain relief at the cellular level.</p>
                 </div>
-                <div class="service-card">
-                    <h3>BrainHealth<span>Plus</span></h3>
-                    <p>Brain training for memory and balance</p>
+                <div class="service-item">
+                    <div class="service-icon">🧠</div>
+                    <h3>BrainHealthPlus</h3>
+                    <p>Brain training program to improve memory and balance.</p>
                 </div>
-                <div class="service-card">
-                    <h3>RCCG <span>Screening</span></h3>
-                    <p>Early cancer detection and prevention</p>
+                <div class="service-item">
+                    <div class="service-icon">🔬</div>
+                    <h3>Cancer Screening</h3>
+                    <p>Early detection and prevention through comprehensive screening.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Nutritional <span>Consulting</span></h3>
-                    <p>Personalized nutrition for optimal health</p>
+                <div class="service-item">
+                    <div class="service-icon">🥗</div>
+                    <h3>Nutritional Consulting</h3>
+                    <p>Personalized nutrition plans to fuel your body for optimal health.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="why-us">
+    <section class="testimonial-highlight">
         <div class="container">
-            <h2>Why Choose Us?</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3><span>30+</span> Years Experience</h3>
-                    <p>Decades of expertise in functional wellness and chiropractic care</p>
-                </div>
-                <div class="why-card">
-                    <h3><span>10,000+</span> Patients Helped</h3>
-                    <p>Thousands of success stories and transformed lives</p>
-                </div>
-                <div class="why-card">
-                    <h3><span>8</span> Advanced Technologies</h3>
-                    <p>Cutting-edge therapeutic equipment for optimal results</p>
-                </div>
-            </div>
+            <blockquote>After years of chronic pain, Dr. Asakura gave me my life back. Her approach is unlike anything I've experienced.</blockquote>
+            <p class="testimonial-author">— Margaret T., Patient</p>
         </div>
     </section>
     
     <section class="cta" id="consultation">
         <div class="container">
-            <h2>Start Your Transformation</h2>
-            <p>Schedule your consultation today and discover what's possible.</p>
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Take the first step toward lasting wellness. Schedule your consultation today.</p>
             <a href="#" class="btn-white">Schedule Now</a>
         </div>
     </section>
