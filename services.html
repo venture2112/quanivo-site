@@ -48,7 +48,7 @@
         
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, rgba(249,247,240,0.92) 0%, rgba(245,240,230,0.88) 100%), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920');
+            background: linear-gradient(135deg, rgba(124,154,109,0.85) 0%, rgba(212,175,55,0.8) 100%), url('https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=1920');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -91,7 +91,7 @@
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
         }
         .service-card {
@@ -190,7 +190,7 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
         }
@@ -237,7 +237,7 @@
                 <p>We utilize cutting-edge therapeutic equipment and evidence-based techniques to help you achieve optimal health and lasting relief. Every treatment is personalized to your unique needs.</p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="service-card">
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Compression Table">
@@ -338,6 +338,23 @@
                             <li>Evidence-based brain stimulation</li>
                         </ul>
                         <p style="margin-top: 15px; font-size: 0.85em; color: #888;">*Limitations, copays and restrictions may apply</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600" alt="RCCG Cancer Screening">
+                    </div>
+                    <div class="service-content">
+                        <h3>RCCG <span>Cancer Screening</span></h3>
+                        <p>Through our partnership with RCCG, we offer comprehensive cancer screening services to detect cancer early when it's most treatable. Early detection saves lives, and our screening programs provide peace of mind and proactive health management for our patients.</p>
+                        <ul class="service-benefits">
+                            <li>Early cancer detection</li>
+                            <li>Comprehensive screening panels</li>
+                            <li>Peace of mind through prevention</li>
+                            <li>Professional guidance and support</li>
+                            <li>Accessible community-based screening</li>
+                        </ul>
                     </div>
                 </div>
             </div>
