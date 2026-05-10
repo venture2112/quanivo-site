@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Dr. Debra Asakura - Beyond Chiropractic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 60px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f9f7f0 0%, #f5f0e6 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #7c9a6d;
+        }
+        .hero p {
+            font-size: 1.3em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .services-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        .services-intro h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .services-intro p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .service-card {
+            background: #faf7f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .service-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .service-content {
+            padding: 35px;
+        }
+        .service-content h3 {
+            font-size: 1.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .service-content h3 span {
+            color: #d4af37;
+        }
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .service-benefits {
+            list-style: none;
+        }
+        .service-benefits li {
+            padding: 8px 0;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+        }
+        .service-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7c9a6d;
+            font-weight: bold;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #2d3748;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .services-intro h2 {
+                font-size: 1.8em;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><img src="logo.jpg" alt="Asakura Beyond Chiropractic"></div>
+                <nav class="nav-links">
+                    <a href="mintbird-style-html-photos.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Our <span>Services</span></h1>
+            <p>Advanced therapeutic technologies combined with decades of chiropractic expertise to address the root cause of your health challenges.</p>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container">
+            <div class="services-intro">
+                <h2>Comprehensive Wellness Solutions</h2>
+                <p>We utilize cutting-edge therapeutic equipment and evidence-based techniques to help you achieve optimal health and lasting relief. Every treatment is personalized to your unique needs.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Compression Table">
+                    </div>
+                    <div class="service-content">
+                        <h3>Compression <span>Table</span></h3>
+                        <p>Our advanced compression table therapy uses gentle, rhythmic pressure to improve circulation, reduce inflammation, and accelerate healing. This non-invasive treatment helps decompress the spine and joints while promoting lymphatic drainage.</p>
+                        <ul class="service-benefits">
+                            <li>Improved blood flow and circulation</li>
+                            <li>Reduced swelling and inflammation</li>
+                            <li>Enhanced lymphatic drainage</li>
+                            <li>Spinal decompression benefits</li>
+                            <li>Accelerated recovery from injuries</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600" alt="Electrical Stimulation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Electrical Stimulation <span>Machine (ESM)</span></h3>
+                        <p>We utilize one of the most powerful Electrical Stimulation Machines available. This advanced technology delivers targeted electrical impulses to reduce pain, strengthen muscles, and promote tissue healing at the cellular level.</p>
+                        <ul class="service-benefits">
+                            <li>Powerful pain relief without medication</li>
+                            <li>Muscle strengthening and rehabilitation</li>
+                            <li>Enhanced tissue healing</li>
+                            <li>Improved range of motion</li>
+                            <li>Reduced muscle spasms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600" alt="Ultrasound Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Therapeutic <span>Ultrasound</span></h3>
+                        <p>Unlike diagnostic ultrasound, our therapeutic ultrasound uses sound waves to penetrate deep into tissues, promoting healing, reducing inflammation, and breaking down scar tissue. This treatment accelerates recovery and provides lasting relief.</p>
+                        <ul class="service-benefits">
+                            <li>Deep tissue healing</li>
+                            <li>Scar tissue breakdown</li>
+                            <li>Increased blood flow to injured areas</li>
+                            <li>Reduced inflammation and pain</li>
+                            <li>Faster recovery times</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600" alt="Shockwave Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Shockwave <span>Therapy</span></h3>
+                        <p>Our state-of-the-art shockwave therapy uses acoustic waves to stimulate healing in chronic pain conditions and injuries. This non-invasive treatment promotes tissue regeneration and breaks down calcifications without surgery.</p>
+                        <ul class="service-benefits">
+                            <li>Effective for chronic pain conditions</li>
+                            <li>Stimulates tissue regeneration</li>
+                            <li>Breaks down calcifications</li>
+                            <li>Non-surgical treatment option</li>
+                            <li>Long-lasting pain relief</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Cold Laser Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cold Laser <span>Therapy (LLLT)</span></h3>
+                        <p>Low-Level Laser Therapy uses specific wavelengths of light to penetrate tissues and stimulate cellular healing. This painless treatment reduces inflammation, accelerates tissue repair, and provides natural pain relief without side effects.</p>
+                        <ul class="service-benefits">
+                            <li>Painless, non-invasive treatment</li>
+                            <li>Cellular-level healing stimulation</li>
+                            <li>Reduced inflammation</li>
+                            <li>Accelerated tissue repair</li>
+                            <li>No side effects or downtime</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600" alt="NeuroBalance">
+                    </div>
+                    <div class="service-content">
+                        <h3>NeuroBalance <span>App</span></h3>
+                        <p>We integrate the innovative NeuroBalance Care app into your treatment plan. This cutting-edge technology helps assess and improve your neurological balance, supporting overall wellness and optimizing your body's natural healing capabilities.</p>
+                        <ul class="service-benefits">
+                            <li>Neurological balance assessment</li>
+                            <li>Personalized wellness insights</li>
+                            <li>Tracks progress over time</li>
+                            <li>Integrates with in-office treatments</li>
+                            <li>Supports long-term wellness goals</li>
+                        </ul>
+                        <p style="margin-top: 15px; font-size: 0.9em;"><a href="https://neurobalancecare.com" target="_blank" style="color: #7c9a6d; text-decoration: none;">Learn more at neurobalancecare.com →</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Experience the Difference?</h2>
+            <p>Schedule your comprehensive consultation and discover which therapeutic approaches are right for your unique health goals.</p>
+            <a href="#" class="btn-white">Schedule Consultation</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
