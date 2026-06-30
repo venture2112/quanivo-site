@@ -47,26 +47,58 @@ export default function Businesses() {
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="relative rounded-lg overflow-hidden">
-              <Image 
-                src="/images/hero-wellness-pod.jpeg" 
-                alt="Wellness Clinic Interior" 
-                width={1200} 
-                height={500} 
-                className="w-full h-96 object-cover"
-              />
+              {/* Slider Images */}
+              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollBehavior: 'smooth' }}>
+                <div className="snap-start flex-shrink-0 w-full">
+                  <Image 
+                    src="/images/hero-slider-1.jpg" 
+                    alt="Wellness Clinic Interior 1" 
+                    width={1200} 
+                    height={500} 
+                    className="w-full h-96 object-cover"
+                    priority
+                  />
+                </div>
+                <div className="snap-start flex-shrink-0 w-full">
+                  <Image 
+                    src="/images/hero-slider-2.jpg" 
+                    alt="Wellness Clinic Interior 2" 
+                    width={1200} 
+                    height={500} 
+                    className="w-full h-96 object-cover"
+                  />
+                </div>
+                <div className="snap-start flex-shrink-0 w-full">
+                  <Image 
+                    src="/images/hero-slider-3.jpg" 
+                    alt="Wellness Clinic Interior 3" 
+                    width={1200} 
+                    height={500} 
+                    className="w-full h-96 object-cover"
+                  />
+                </div>
+                <div className="snap-start flex-shrink-0 w-full">
+                  <Image 
+                    src="/images/hero-slider-4.jpg" 
+                    alt="Wellness Clinic Interior 4" 
+                    width={1200} 
+                    height={500} 
+                    className="w-full h-96 object-cover"
+                  />
+                </div>
+              </div>
               
               {/* Carousel Arrows */}
-              <button className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white">
+              <button className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md">
                 <span className="text-gray-600">←</span>
               </button>
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white">
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md">
                 <span className="text-gray-600">→</span>
               </button>
               
               {/* Carousel Indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 <span className="w-3 h-3 bg-black rounded-full"></span>
-                <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
                 <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
                 <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
                 <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
