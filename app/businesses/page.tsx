@@ -10,7 +10,9 @@ export default function Businesses() {
     '/images/hero-slider-1.jpg',
     '/images/hero-slider-2.jpg',
     '/images/hero-slider-3.jpg',
-    '/images/hero-slider-4.jpg'
+    '/images/hero-slider-4.jpg',
+    '/images/hero-slider-5.jpg',
+    '/images/hero-slider-6.jpg'
   ];
 
   const nextSlide = () => {
