@@ -13,14 +13,11 @@ export default function Home() {
               <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
             <div className="hidden lg:flex items-center gap-8">
-              <a className="text-sm font-medium text-gray-900" href="/">Home</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/products">Products</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/business">For Business</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/residential">For Home</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/about">About</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/blog">Blog</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
-              <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
+              <a className="text-sm font-medium text-gray-900" href="#home">Home</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="#products">Products</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="#about">About</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="#contact">Contact</a>
+              <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
             <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
           </div>
@@ -29,7 +26,7 @@ export default function Home() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="home" className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/hero-wellness-pod.jpeg"
@@ -47,17 +44,17 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl text-white/90 mb-8">
               & More State of the Art Wellness Equipment for Business and Home
             </h2>
-            <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-lg px-10 py-4 hover:bg-blue-700">
+            <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-lg px-10 py-4 hover:bg-blue-700">
               Book Free Consultation
             </a>
           </div>
         </section>
 
         {/* Product Categories Grid */}
-        <section className="py-20 bg-gray-50">
+        <section id="products" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              <a href="/products/fitness" className="group">
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/product-shot-2.png" alt="Fitness" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -66,8 +63,8 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Fitness</h3>
                   </div>
                 </div>
-              </a>
-              <a href="/products/infrared" className="group">
+              </div>
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/product-shot-1.png" alt="Infrared" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -76,8 +73,8 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Infrared</h3>
                   </div>
                 </div>
-              </a>
-              <a href="/products/hyperbaric" className="group">
+              </div>
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/logo.png" alt="Hyperbaric" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -86,8 +83,8 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Hyperbaric</h3>
                   </div>
                 </div>
-              </a>
-              <a href="/products/massage-chairs" className="group">
+              </div>
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/pod-interior.jpeg" alt="Massage Chairs" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -96,8 +93,8 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Massage Chairs</h3>
                   </div>
                 </div>
-              </a>
-              <a href="/products/bioresonance" className="group">
+              </div>
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/icon-feature.png" alt="Bio-Resonance" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -106,8 +103,8 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Bio-Resonance</h3>
                   </div>
                 </div>
-              </a>
-              <a href="/products/cryotherapy" className="group">
+              </div>
+              <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
                     <Image src="/images/benefits-chart.png" alt="Cryotherapy" fill className="object-cover group-hover:scale-105 transition-transform" />
@@ -116,13 +113,13 @@ export default function Home() {
                     <h3 className="font-semibold text-gray-900">Cryotherapy</h3>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Quantum Wellness Content */}
-        <section className="py-20 bg-white">
+        <section id="about" className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Quantum Wellness & Bio-Stacking:
@@ -153,7 +150,7 @@ export default function Home() {
         {/* Product Line CTA */}
         <section className="py-20 bg-gray-900">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <a href="/products" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-xl px-12 py-5 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
+            <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-xl px-12 py-5 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
               View Our Product Line
             </a>
           </div>
@@ -174,7 +171,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 bg-white">
+        <section id="contact" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
               <div>
@@ -208,18 +205,21 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/products" className="hover:text-white">Products</a></li>
-                <li><a href="/business" className="hover:text-white">For Business</a></li>
-                <li><a href="/residential" className="hover:text-white">For Home</a></li>
-                <li><a href="/financing" className="hover:text-white">Financing</a></li>
+                <li><a href="#home" className="hover:text-white">Home</a></li>
+                <li><a href="#products" className="hover:text-white">Products</a></li>
+                <li><a href="#about" className="hover:text-white">About</a></li>
+                <li><a href="#contact" className="hover:text-white">Contact</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Support</h4>
+              <h4 className="font-bold mb-4">Products</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/faq" className="hover:text-white">FAQ</a></li>
-                <li><a href="/blog" className="hover:text-white">Blog</a></li>
-                <li><a href="/contact" className="hover:text-white">Contact</a></li>
+                <li>Fitness Equipment</li>
+                <li>Infrared Therapy</li>
+                <li>Hyperbaric Chambers</li>
+                <li>Massage Chairs</li>
+                <li>Bio-Resonance</li>
+                <li>Cryotherapy</li>
               </ul>
             </div>
             <div>
