@@ -1,8 +1,31 @@
+'use client';
+
 import Image from "next/image";
-import { Menu, ShoppingCart, User, X, MessageCircle } from "lucide-react";
+import { Menu, ShoppingCart, User, X, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Businesses() {
-  return (
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    '/images/hero-slider-1.jpg',
+    '/images/hero-slider-2.jpg',
+    '/images/hero-slider-3.jpg',
+    '/images/hero-slider-4.jpg'
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-100">
@@ -46,62 +69,54 @@ export default function Businesses() {
         {/* Hero Image Carousel */}
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="relative rounded-lg overflow-hidden">
+            <div className="relative rounded-lg overflow-hidden bg-gray-100">
               {/* Slider Images */}
-              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollBehavior: 'smooth' }}>
-                <div className="snap-start flex-shrink-0 w-full">
-                  <Image 
-                    src="/images/hero-slider-1.jpg" 
-                    alt="Wellness Clinic Interior 1" 
-                    width={1200} 
-                    height={500} 
-                    className="w-full h-96 object-cover"
-                    priority
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-full">
-                  <Image 
-                    src="/images/hero-slider-2.jpg" 
-                    alt="Wellness Clinic Interior 2" 
-                    width={1200} 
-                    height={500} 
-                    className="w-full h-96 object-cover"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-full">
-                  <Image 
-                    src="/images/hero-slider-3.jpg" 
-                    alt="Wellness Clinic Interior 3" 
-                    width={1200} 
-                    height={500} 
-                    className="w-full h-96 object-cover"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-full">
-                  <Image 
-                    src="/images/hero-slider-4.jpg" 
-                    alt="Wellness Clinic Interior 4" 
-                    width={1200} 
-                    height={500} 
-                    className="w-full h-96 object-cover"
-                  />
-                </div>
+              <div className="relative h-[500px]">
+                {slides.map((slide, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-500 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <Image
+                      src={slide}
+                      alt={`Wellness Clinic Interior ${index + 1}`}
+                      fill
+                      className="object-cover object-top"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
               </div>
-              
+
               {/* Carousel Arrows */}
-              <button className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md">
-                <span className="text-gray-600">←</span>
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md z-10"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-600" />
               </button>
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md">
-                <span className="text-gray-600">→</span>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center hover:bg-white shadow-md z-10"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-600" />
               </button>
-              
+
               {/* Carousel Indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                <span className="w-3 h-3 bg-black rounded-full"></span>
-                <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-                <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-                <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`rounded-full transition-all ${
+                      index === currentSlide
+                        ? 'w-3 h-3 bg-black'
+                        : 'w-2 h-2 bg-gray-400 hover:bg-gray-500'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
