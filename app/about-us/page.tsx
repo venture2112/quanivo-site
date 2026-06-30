@@ -26,14 +26,21 @@ export default function AboutUs() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 to-blue-700">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/about-hero.jpg"
+              alt="About Quanivo Wellness"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-blue-700/80" />
+          </div>
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-              Our Passion for Wellness
+              About Us
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Dedicated to bringing cutting-edge wellness technology to homes and businesses worldwide.
-            </p>
           </div>
         </section>
 
@@ -42,16 +49,13 @@ export default function AboutUs() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="prose prose-lg mx-auto text-gray-600">
               <p className="mb-6">
-                At Quanivo, we believe that optimal health and wellness should be accessible to everyone. Our journey began with a simple mission: to source and provide the most advanced wellness equipment available on the market today.
+                Quanivo Wellness, a distinguished division of Venture Works Inc, a California corporation established in 2002, is driven by a passion for empowering vibrant health through premium wellness solutions.
               </p>
               <p className="mb-6">
-                We specialize in bioresonance technology, infrared therapy, hyperbaric chambers, and a wide range of specialty fitness products designed to enhance your physical and mental well-being. Each product in our catalog is carefully selected for its quality, effectiveness, and ability to deliver real results.
-              </p>
-              <p className="mb-6">
-                Whether you are a wellness enthusiast looking to upgrade your home setup, a business owner seeking to enhance your facility offerings, or a healthcare provider wanting to offer cutting-edge treatments to your patients, Quanivo is your trusted partner.
+                We specialize in curating specialty high-end products, including advanced quantum and multi-stacking innovations to cutting-edge therapy devices, carefully selected to enhance recovery, vitality, and mental clarity for wellness enthusiasts, clinics, and home users.
               </p>
               <p>
-                Our team of wellness experts is dedicated to helping you find the perfect solutions for your unique needs. We provide comprehensive support, from product selection to installation and ongoing maintenance, ensuring you get the most out of your investment.
+                Our commitment to seeing people thrive fuels our mission to bring the finest wellness technologies to you. Each product is chosen for its quality, innovation, and ability to deliver transformative health benefits, ensuring safety and efficacy for all users. Backed by Venture Works Inc.'s over two decades of entrepreneurial expertise, Quanivo Wellness leads the industry by making elite wellness accessible. We're not just offering products—we're inspiring a movement to live healthier, stronger, and more balanced lives every day.
               </p>
             </div>
           </div>
