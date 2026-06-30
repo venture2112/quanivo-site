@@ -13,11 +13,12 @@ export default function Home() {
               <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
             <div className="hidden lg:flex items-center gap-8">
-              <a className="text-sm font-medium text-gray-900" href="#home">Home</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="#products">Products</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="#about">About</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="#contact">Contact</a>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
+              <a className="text-sm font-medium text-gray-900" href="/">Home</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/bioresonance">Products</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/businesses">For Business</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
+              <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
             <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
           </div>
@@ -205,21 +206,19 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#home" className="hover:text-white">Home</a></li>
-                <li><a href="#products" className="hover:text-white">Products</a></li>
-                <li><a href="#about" className="hover:text-white">About</a></li>
-                <li><a href="#contact" className="hover:text-white">Contact</a></li>
+                <li><a href="/" className="hover:text-white">Home</a></li>
+                <li><a href="/about-us" className="hover:text-white">About Us</a></li>
+                <li><a href="/bioresonance" className="hover:text-white">Products</a></li>
+                <li><a href="/businesses" className="hover:text-white">For Business</a></li>
+                <li><a href="/financing" className="hover:text-white">Financing</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Products</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Fitness Equipment</li>
-                <li>Infrared Therapy</li>
-                <li>Hyperbaric Chambers</li>
-                <li>Massage Chairs</li>
-                <li>Bio-Resonance</li>
-                <li>Cryotherapy</li>
+                <li><a href="/bioresonance" className="hover:text-white">Bioresonance</a></li>
+                <li><a href="/hyperbaric" className="hover:text-white">Hyperbaric</a></li>
+                <li><a href="/infrared" className="hover:text-white">Infrared</a></li>
               </ul>
             </div>
             <div>
