@@ -26,6 +26,8 @@ export default function Businesses() {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
       <nav className="bg-white border-b border-gray-100">
