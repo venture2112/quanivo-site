@@ -63,7 +63,7 @@ export default function Financing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg overflow-hidden">
             <Image 
-              src="/images/hero-wellness-pod.jpeg" 
+              src="/images/financing-hero.jpg" 
               alt="Wellness Equipment Financing" 
               width={1200} 
               height={400} 
