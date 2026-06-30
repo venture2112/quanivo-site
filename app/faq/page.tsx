@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, ShoppingCart, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 
 interface FAQItem {
@@ -113,6 +114,22 @@ export default function FAQ() {
           </div>
         </div>
       </nav>
+
+      {/* Hero Image */}
+      <section className="py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg overflow-hidden">
+            <Image 
+              src="/images/faq-hero.jpg" 
+              alt="FAQ - Frequently Asked Questions" 
+              width={1200} 
+              height={400} 
+              className="w-full h-64 md:h-96 object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-white flex-grow">
