@@ -1,157 +1,193 @@
 import Image from "next/image";
-import { Sparkles, Menu, Phone, Mail, MapPin, Check, DollarSign, Calendar, Shield } from "lucide-react";
+import { Menu, ShoppingCart, User, X, MessageCircle } from "lucide-react";
 
 export default function Financing() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Navigation */}
+      <nav className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            {/* Logo */}
             <a className="flex items-center gap-2" href="/">
-              <Sparkles className="w-8 h-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">Quanivo</span>
+              <div className="w-10 h-10 relative">
+                <svg viewBox="0 0 40 40" className="w-full h-full">
+                  <circle cx="20" cy="20" r="15" fill="#56CCF2" />
+                  <path d="M20 5 Q32 20 20 35 Q8 20 20 5" fill="none" stroke="white" strokeWidth="3" />
+                </svg>
+              </div>
+              <span className="text-2xl font-semibold text-gray-800">Quanivo</span>
             </a>
-            <div className="hidden lg:flex items-center gap-8">
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/bioresonance">Products</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/businesses">For Business</a>
-              <a className="text-sm font-medium text-gray-900" href="/financing">Financing</a>
-              <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
+            
+            {/* Navigation Links */}
+            <div className="hidden lg:flex items-center gap-6">
+              <a className="text-sm text-gray-500 hover:text-gray-700" href="/about-us">About Us</a>
+              <div className="relative group">
+                <a className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1" href="/bioresonance">
+                  Products
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-48 hidden group-hover:block z-50">
+                  <a href="/bioresonance" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bioresonance</a>
+                  <a href="/cryotherapy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cryotherapy</a>
+                  <a href="/hyperbaric" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hyperbaric Chambers</a>
+                  <a href="/infrared" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Infrared</a>
+                  <a href="/massage-chairs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Massage Chairs</a>
+                  <a href="/fitness" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fitness</a>
+                </div>
+              </div>
+              <a className="text-sm text-gray-500 hover:text-gray-700" href="/businesses">For Business</a>
+              <a className="text-sm text-cyan-400 border-b-2 border-cyan-400 pb-1" href="/financing">Financing</a>
+              <a className="text-sm text-gray-500 hover:text-gray-700" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-500 hover:text-gray-700" href="/blog">Blog</a>
+              <a className="text-sm text-gray-500 hover:text-gray-700" href="/contact">Contact</a>
             </div>
-            <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
+
+            {/* Cart & Mobile Menu */}
+            <div className="flex items-center gap-4">
+              <button className="p-2 text-gray-600 hover:text-gray-800">
+                <ShoppingCart className="w-5 h-5" />
+              </button>
+              <button className="lg:hidden p-2 text-gray-600 hover:text-gray-800">
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
-      <main className="flex-1 pt-20">
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 to-teal-800">
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-              Wellness Equipment Financing
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Flexible payment options to make your wellness investment affordable
-            </p>
+      {/* Hero Image */}
+      <section className="py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg overflow-hidden">
+            <Image 
+              src="/images/hero-wellness-pod.jpeg" 
+              alt="Wellness Equipment Financing" 
+              width={1200} 
+              height={400} 
+              className="w-full h-64 md:h-96 object-cover"
+            />
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <DollarSign className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Competitive Rates</h3>
-                <p className="text-gray-600">Low-interest financing options for qualified buyers</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <Calendar className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Flexible Terms</h3>
-                <p className="text-gray-600">Choose from 12 to 84 month payment plans</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <Shield className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Quick Approval</h3>
-                <p className="text-gray-600">Fast credit decisions, often within 24-48 hours</p>
-              </div>
+      {/* Financing Available Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Financing Available</h1>
+          
+          <h2 className="text-2xl md:text-3xl font-normal text-gray-800 mb-6">Why Invest in Wellness Equipment?</h2>
+          
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            High-quality wellness equipment, such as bio-resonance pods, cryotherapy, massage chairs, infrared, or advanced fitness machines, can significantly enhance your health and well-being. However, the upfront cost can be a barrier. Our flexible financing options make it easier to bring these transformative tools into your home without breaking the bank.
+          </p>
+        </div>
+      </section>
+
+      {/* Flexible Financing Options Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">Flexible Financing Options</h2>
+          
+          <p className="text-lg text-gray-600 text-center mb-10">
+            We partner with trusted financing providers to offer affordable payment plans that fit your budget.
+          </p>
+          
+          <p className="text-lg text-gray-600 text-center mb-8">
+            Spread the cost of your wellness equipment over time with manageable monthly payments.
+          </p>
+          
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3"><strong>Affirm</strong></h3>
+              <p className="text-gray-600">Affirm offers transparent financing with fixed monthly payments. Choose a plan that suits you, with terms ranging from 3 to 36 months. Enjoy competitive interest rates and no hidden fees. Check your eligibility in seconds without impacting your credit score.</p>
             </div>
-
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Financing Options</h2>
-              <div className="space-y-6">
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900">Business Financing</h3>
-                  <p className="text-gray-600 mb-4">Tailored financing solutions for wellness centers, medical practices, and fitness facilities. Lease-to-own options available.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>Tax advantages for business equipment</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>Preserve working capital</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>Flexible end-of-term options</span></li>
-                  </ul>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Financing</h3>
-                  <p className="text-gray-600 mb-4">Make your home wellness dreams a reality with affordable monthly payments. No hidden fees or prepayment penalties.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>Competitive interest rates</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>No money down options</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600" /><span>Easy online application</span></li>
-                  </ul>
-                </div>
-              </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3"><strong>Afterpay</strong></h3>
+              <p className="text-gray-600">With Afterpay, you can split your purchase into four interest-free payments, due every few weeks. It's a simple way to get your wellness equipment now and pay over time, with no credit check required for most purchases.</p>
             </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-blue-600">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-white">Ready to Get Started?</h2>
-            <p className="text-xl text-white/90 mb-8">Contact us today to discuss your financing options and get pre-qualified.</p>
-            <a href="/" className="inline-flex items-center justify-center rounded-lg bg-white text-blue-600 font-medium text-lg px-8 py-4 hover:bg-gray-100">
-              Apply for Financing
-            </a>
-          </div>
-        </section>
-
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-12">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Post Address and Mail</h3>
-                <p className="text-gray-600 mb-2"><strong>Email:</strong> hello@quanivo.com</p>
-                <p className="text-gray-600"><strong>Address:</strong><br />Office: 7040 Avenida Encinas<br />Carlsbad CA 92011</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Get In Touch</h3>
-                <p className="text-gray-600"><strong>Phone Number:</strong><br />760-203-6399</p>
-              </div>
-              <div>
-                <Image src="/images/pod-session.jpeg" alt="Wellness Pod" width={400} height={300} className="rounded-xl shadow-lg" />
-              </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3"><strong>Klarna</strong></h3>
+              <p className="text-gray-600">Klarna provides flexible payment options, including paying in 4 interest-free installments or financing over longer terms with competitive rates. Select a plan at checkout and enjoy instant approval with clear terms.</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3"><strong>Clearpay</strong></h3>
+              <p className="text-gray-600">Clearpay allows you to split your purchase into four interest-free payments, paid every two weeks. It's a straightforward option for budgeting your wellness investment, with no hidden fees.</p>
             </div>
           </div>
-        </section>
-      </main>
+          
+          <p className="text-lg text-gray-600 text-center mt-10">
+            These options allow you to enjoy your equipment immediately while paying at a pace that works for you.
+          </p>
+        </div>
+      </section>
 
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-blue-400" />
-                <span className="text-xl font-bold">Quanivo</span>
-              </div>
-              <p className="text-gray-400">Quantum wellness solutions for businesses and homes.</p>
+      {/* How It Works Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">How It Works</h2>
+          
+          <p className="text-lg text-gray-600 text-center mb-10">
+            We make it easy for you to choose one of our financing options
+          </p>
+          
+          <div className="space-y-6 max-w-2xl mx-auto">
+            <div className="flex gap-4">
+              <span className="text-cyan-500 font-bold text-xl">1.</span>
+              <p className="text-gray-600"><em className="font-semibold text-gray-800">Choose Your Equipment</em>: Browse our selection of premium wellness products.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/about-us" className="hover:text-white">About Us</a></li>
-                <li><a href="/bioresonance" className="hover:text-white">Products</a></li>
-                <li><a href="/businesses" className="hover:text-white">For Business</a></li>
-                <li><a href="/financing" className="hover:text-white">Financing</a></li>
-              </ul>
+            
+            <div className="flex gap-4">
+              <span className="text-cyan-500 font-bold text-xl">2.</span>
+              <p className="text-gray-600"><em className="font-semibold text-gray-800">Select Financing at Checkout</em>: Pick Affirm or Afterpay and complete a quick application.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Products</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/bioresonance" className="hover:text-white">Bioresonance</a></li>
-                <li><a href="/hyperbaric" className="hover:text-white">Hyperbaric</a></li>
-                <li><a href="/infrared" className="hover:text-white">Infrared</a></li>
-              </ul>
+            
+            <div className="flex gap-4">
+              <span className="text-cyan-500 font-bold text-xl">3.</span>
+              <p className="text-gray-600"><em className="font-semibold text-gray-800">Get Approved</em>: Receive instant approval in most cases, with clear terms upfront.</p>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> 760-203-6399</li>
-                <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@quanivo.com</li>
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Carlsbad, CA 92011</li>
-              </ul>
+            
+            <div className="flex gap-4">
+              <span className="text-cyan-500 font-bold text-xl">4.</span>
+              <p className="text-gray-600"><em className="font-semibold text-gray-800">Enjoy Your Equipment</em>: Get your equipment now, and you pay over time.</p>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>© 2025 Quanivo Wellness. All rights reserved.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 border-t border-gray-200 py-8 mt-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-6">
+            <a href="/contact" className="hover:text-gray-900">Contact</a>
+            <a href="/privacy-policy" className="hover:text-gray-900">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:text-gray-900">Terms and Conditions</a>
+            <a href="/disclaimer" className="hover:text-gray-900">Disclaimer</a>
+            <a href="/refund-policy" className="hover:text-gray-900">Refund Policy</a>
+            <a href="/dmca" className="hover:text-gray-900">DMCA</a>
+            <a href="/cookies" className="hover:text-gray-900">Cookies</a>
+            <a href="/california-privacy" className="hover:text-gray-900">California Privacy</a>
+            <a href="/financing" className="hover:text-gray-900">Financing</a>
+          </div>
+          
+          <div className="text-center">
+            <h3 className="text-lg font-semibold text-cyan-500 mb-2">Quanivo Wellness</h3>
+            <p className="text-gray-500 text-sm">Copyright 2025. All rights reserved</p>
           </div>
         </div>
       </footer>
+
+      {/* Chat Widget */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button className="w-14 h-14 bg-cyan-400 rounded-full flex items-center justify-center shadow-lg hover:bg-cyan-500 transition-colors">
+          <MessageCircle className="w-7 h-7 text-white" />
+        </button>
+      </div>
     </div>
   );
 }
