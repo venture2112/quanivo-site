@@ -136,11 +136,7 @@ export default function FAQ() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-cyan-500 text-lg font-medium tracking-wider uppercase mb-4">FAQ</h2>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Frequently Asked Questions</h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about our wellness products, delivery, financing, and support.
-            </p>
           </div>
 
           {/* Want More Info Section */}
