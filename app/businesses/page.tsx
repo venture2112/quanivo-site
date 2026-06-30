@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { Sparkles, Menu, Phone, Mail, MapPin, Check, Building2, Users, TrendingUp } from "lucide-react";
+import { Sparkles, Menu, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 
 export default function Businesses() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -13,7 +14,16 @@ export default function Businesses() {
             </a>
             <div className="hidden lg:flex items-center gap-8">
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/bioresonance">Products</a>
+              <div className="relative group">
+                <a className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1" href="/bioresonance">
+                  Products <ChevronDown className="w-4 h-4" />
+                </a>
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[200px] hidden group-hover:block">
+                  <a href="/bioresonance" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50">Bioresonance</a>
+                  <a href="/hyperbaric" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50">Hyperbaric Chambers</a>
+                  <a href="/infrared" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50">Infrared</a>
+                </div>
+              </div>
               <a className="text-sm font-medium text-gray-900" href="/businesses">For Business</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
               <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
@@ -24,68 +34,123 @@ export default function Businesses() {
       </nav>
 
       <main className="flex-1 pt-20">
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 to-blue-800">
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-              Specialty Wellness Products for Business
+        {/* Hero Image Slider Section */}
+        <section className="py-8 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-xl">
+              <div className="flex gap-4 overflow-x-auto pb-4">
+                <div className="flex-shrink-0 w-full md:w-1/3">
+                  <Image src="/images/hero-wellness-pod.jpeg" alt="Wellness Pod" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
+                </div>
+                <div className="flex-shrink-0 w-full md:w-1/3">
+                  <Image src="/images/pod-session.jpeg" alt="Pod Session" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
+                </div>
+                <div className="flex-shrink-0 w-full md:w-1/3">
+                  <Image src="/images/pod-interior.jpeg" alt="Pod Interior" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Headline Section */}
+        <section className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Amplify Your Success with
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Elevate your facility with cutting-edge wellness equipment
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Quanivo Wellness Solutions
+            </h1>
+          </div>
+        </section>
+
+        {/* Welcome Text Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-700 mb-6">
+              Welcome to Quanivo Wellness, where we empower spas, clinics, gyms, corporate wellness programs, and innovative business owners to lead the charge in the $3.7 trillion wellness industry.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Whether you're a gym, wellness center or spa owner, chiropractor, acupuncturist, nutritionist, practitioner, or natural health doctor, our bio-wellness pods and advanced equipment, like cryotherapy chambers, hyperbaric chambers, and luxury massage chairs, are designed to elevate your offerings, attract new clients, and boost profitability.
+            </p>
+            <p className="text-lg text-gray-700">
+              By partnering with Quanivo Wellness, you gain access to cutting-edge quantum wellness solutions that deliver transformative results, ensuring your business thrives in a competitive market.
             </p>
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <Building2 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Spas & Wellness Centers</h3>
-                <p className="text-gray-600">Enhance your service offerings with premium wellness equipment</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Medical Practices</h3>
-                <p className="text-gray-600">Offer advanced therapeutic solutions to your patients</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 text-center">
-                <TrendingUp className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Fitness Facilities</h3>
-                <p className="text-gray-600">Differentiate your gym with recovery and wellness amenities</p>
-              </div>
+        {/* Product Images Row */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-6">
+              <Image src="/images/product-shot-1.png" alt="Product 1" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
+              <Image src="/images/product-shot-2.png" alt="Product 2" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
+              <Image src="/images/benefits-chart.png" alt="Benefits Chart" width={400} height={300} className="rounded-lg shadow-md w-full h-64 object-cover" />
             </div>
+          </div>
+        </section>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Why Choose Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8">
+              Why Choose Quanivo Wellness<br />for Your Business?
+            </h2>
+            <p className="text-lg text-gray-700">
+              Our flagship Quantum Energy Bio-Wellness Pod is a game-changer, blending quantum energy, red light therapy (630nm-850nm), far-infrared heat, vibrational therapy, and more to create immersive 15-60 minute sessions that enhance circulation, detoxification, muscle recovery, and mental clarity. Priced at an average of $100/hour, these pods capitalize on your existing clientele—athletes, busy professionals, and wellness enthusiasts—while drawing new patrons with a service so exclusive it often commands waitlists due to limited availability. Requiring just 5x9 feet of space, the pod is a perfect fit for underutilized areas in spas, gyms, hotels, or wellness resorts, delivering rapid profitability with minimal staff training and seamless integration into your operations.
+            </p>
+          </div>
+        </section>
+
+        {/* Tailored Solutions Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+              Tailored Solutions for<br />Diverse Wellness Businesses
+            </h2>
+            
+            <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">Why Partner With Quanivo?</h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-1" /><span><strong>Wholesale Pricing:</strong> Competitive pricing for bulk orders and business accounts</span></li>
-                  <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-1" /><span><strong>White-Glove Installation:</strong> Professional setup and training for your staff</span></li>
-                  <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-1" /><span><strong>Ongoing Support:</strong> Dedicated account management and technical support</span></li>
-                  <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-1" /><span><strong>Marketing Materials:</strong> Co-branded materials to promote your new offerings</span></li>
-                  <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-600 mt-1" /><span><strong>Flexible Financing:</strong> Business-friendly payment options available</span></li>
-                </ul>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Wellness Practitioners</h3>
+                <p className="text-gray-700">
+                  Chiropractors, acupuncturists, and natural doctors can enhance their practice with our bio-wellness pods, offering clients a unique experience that complements existing therapies.
+                </p>
               </div>
+              
               <div>
-                <Image src="/images/benefits-chart.png" alt="Business Benefits" width={600} height={500} className="rounded-xl shadow-lg" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Spas and Gyms</h3>
+                <p className="text-gray-700">
+                  Maximize unused space and elevate your brand as a cutting-edge wellness destination. Our equipment styled in modern elegance, creates a luxurious ambiance, encouraging repeat visits and boosting revenue by up to 30%, as seen with similar technologies.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Corporate Wellness Programs</h3>
+                <p className="text-gray-700">
+                  Large businesses seeking employee perks can integrate our pods to reduce sick days and insurance claims. Bulk pricing is available, making it cost-effective to foster a healthier workforce with benefits like pain relief and stress reduction. Our hyperbaric chambers and massage chairs further enhance corporate wellness initiatives.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-16 text-center text-gray-900">Perfect For</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {['Luxury Spas', 'Wellness Centers', 'Medical Clinics', 'Chiropractic Offices', 'Fitness Centers', 'Hotels & Resorts', 'Senior Communities', 'Corporate Wellness'].map((item) => (
-                <div key={item} className="bg-white rounded-lg shadow-md p-6 text-center">
-                  <h3 className="font-semibold text-gray-900">{item}</h3>
-                </div>
-              ))}
-            </div>
+        {/* Strategic Investment Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8">
+              Strategic Investment for<br />Long-Term Growth
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Investing in Quanivo's wellness solutions positions your business at the forefront of the holistic health movement. Our bio-wellness pods and related equipment offer customizable protocols for weight management, recovery, or relaxation, driving client loyalty and organic growth. With ease of use, your operations remain streamlined, allowing you to focus on delivering premium services.
+            </p>
+            <p className="text-lg text-gray-700">
+              Transform your business into a beacon of health and profitability with Quanivo Wellness, where innovation meets unparalleled client satisfaction.
+            </p>
           </div>
         </section>
 
+        {/* Contact Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-12">
@@ -106,6 +171,7 @@ export default function Businesses() {
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
