@@ -126,6 +126,17 @@ export default function FAQ() {
             </p>
           </div>
 
+          {/* Want More Info Section */}
+          <div className="text-center mb-12 max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Want More info?</h3>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Quanivo Wellness is dedicated to transforming health and recovery through cutting-edge wellness technologies. Our product lineup, including the Bio-Wellness Pod, specialty cryotherapy products like the Cryo Bike and Cryo Treadmill, hyperbaric chambers, and high-end zero gravity massage chairs, is designed to elevate your wellness journey.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              Below, we address common questions about our products, delivery, financing, warranties, and more to help you make informed decisions.
+            </p>
+          </div>
+
           {/* FAQ Accordion */}
           <div className="space-y-4">
             {faqData.map((faq, index) => (
