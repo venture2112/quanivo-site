@@ -167,13 +167,13 @@ export default function Businesses() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="rounded-lg overflow-hidden shadow-md">
-                <Image src="/images/wellness-lifestyle.png" alt="Silhouette at sunset" width={400} height={300} className="w-full h-64 object-cover" />
+                <Image src="/images/gallery-1.jpg" alt="Wellness lifestyle" width={400} height={300} className="w-full h-64 object-cover" />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
-                <Image src="/images/additional-wellness.jpeg" alt="Mind Body Soul stones" width={400} height={300} className="w-full h-64 object-cover" />
+                <Image src="/images/gallery-2.jpg" alt="Mind body soul" width={400} height={300} className="w-full h-64 object-cover" />
               </div>
               <div className="rounded-lg overflow-hidden shadow-md">
-                <Image src="/images/pod-session.jpeg" alt="Woman with light" width={400} height={300} className="w-full h-64 object-cover" />
+                <Image src="/images/gallery-3.jpg" alt="Wellness experience" width={400} height={300} className="w-full h-64 object-cover" />
               </div>
             </div>
           </div>
