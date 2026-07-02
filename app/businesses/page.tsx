@@ -72,7 +72,7 @@ export default function Businesses() {
                       src={slide}
                       alt={`Wellness Clinic Interior ${index + 1}`}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-[center_40%]"
                       priority={index === 0}
                     />
                   </div>
