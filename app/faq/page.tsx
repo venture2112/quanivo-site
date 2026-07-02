@@ -85,12 +85,12 @@ export default function FAQ() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative w-full h-[450px] overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
           src="/images/faq-hero.jpg" 
           alt="FAQ - Frequently Asked Questions" 
           fill
-          className="object-cover object-[center_10%]"
+          className="object-cover object-center"
           priority
         />
       </section>
