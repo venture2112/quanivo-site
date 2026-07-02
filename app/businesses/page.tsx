@@ -62,9 +62,9 @@ export default function Businesses() {
               {/* Slider Images */}
               <div className="relative h-[55vh]">
                 {slides.map((slide, index) => {
-                  // Custom object positions: slides 2,3,4 (indexes 1,2,3) moved up 55%
-                  const objectPosition = index === 1 || index === 2 || index === 3 
-                    ? 'object-[center_-15%]' 
+                  // Custom object positions: slides 2,3 (indexes 1,2) moved up 5%, slide 4 back to normal
+                  const objectPosition = index === 1 || index === 2
+                    ? 'object-[center_35%]'
                     : 'object-[center_40%]';
                   return (
                     <div
