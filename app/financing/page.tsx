@@ -33,7 +33,7 @@ export default function Financing() {
           src="/images/financing-hero.jpg" 
           alt="Wellness Equipment Financing" 
           fill
-          className="object-cover object-center"
+          className="object-cover object-[center_45%]"
         />
       </section>
 
