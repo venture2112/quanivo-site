@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { Menu, ShoppingCart, User, X, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, Menu, X, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Businesses() {
@@ -32,50 +32,35 @@ export default function Businesses() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <a className="flex items-center gap-2" href="/">
-              <div className="w-10 h-10 relative">
-                <svg viewBox="0 0 40 40" className="w-full h-full">
-                  <circle cx="20" cy="20" r="15" fill="#56CCF2" />
-                  <path d="M20 5 Q32 20 20 35 Q8 20 20 5" fill="none" stroke="white" strokeWidth="3" />
-                </svg>
-              </div>
-              <span className="text-2xl font-semibold text-gray-800">Quanivo</span>
+              <Sparkles className="w-8 h-8 text-blue-600" />
+              <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
-            
-            {/* Navigation Links */}
-            <div className="hidden lg:flex items-center gap-6">
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/about-us">About Us</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/bioresonance">Products</a>
-              <a className="text-sm text-cyan-400 border-b-2 border-cyan-400 pb-1" href="/businesses">For Business</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/financing">Financing</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/faq">FAQ</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/blog">Blog</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/contact">Contact</a>
+            <div className="hidden lg:flex items-center gap-8">
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/">Home</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/products">Products</a>
+              <a className="text-sm font-medium text-gray-900" href="/businesses">For Business</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
+              <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
-            
-            {/* Utility Icons */}
-            <div className="hidden lg:flex items-center gap-4">
-              <ShoppingCart className="w-5 h-5 text-gray-600" />
-              <div className="w-px h-5 bg-gray-300"></div>
-              <User className="w-5 h-5 text-gray-600" />
-            </div>
-            
             <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
           </div>
         </div>
       </nav>
 
-      <main className="flex-1">
+      <main className="flex-1 pt-20">
         {/* Hero Image Carousel */}
         <section className="relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="relative rounded-lg overflow-hidden bg-gray-100">
               {/* Slider Images */}
-              <div className="relative h-[500px]">
+              <div className="relative h-[50vh]">
                 {slides.map((slide, index) => (
                   <div
                     key={index}
