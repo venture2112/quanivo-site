@@ -1,80 +1,44 @@
 import Image from "next/image";
-import { Menu, ShoppingCart, User, X, MessageCircle } from "lucide-react";
+import { Sparkles, Menu, X, MessageCircle } from "lucide-react";
 
 export default function Financing() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <a className="flex items-center gap-2" href="/">
-              <div className="w-10 h-10 relative">
-                <svg viewBox="0 0 40 40" className="w-full h-full">
-                  <circle cx="20" cy="20" r="15" fill="#56CCF2" />
-                  <path d="M20 5 Q32 20 20 35 Q8 20 20 5" fill="none" stroke="white" strokeWidth="3" />
-                </svg>
-              </div>
-              <span className="text-2xl font-semibold text-gray-800">Quanivo</span>
+              <Sparkles className="w-8 h-8 text-blue-600" />
+              <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
-            
-            {/* Navigation Links */}
-            <div className="hidden lg:flex items-center gap-6">
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/about-us">About Us</a>
-              <div className="relative group">
-                <a className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1" href="/bioresonance">
-                  Products
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </a>
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-48 hidden group-hover:block z-50">
-                  <a href="/bioresonance" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bioresonance</a>
-                  <a href="/cryotherapy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cryotherapy</a>
-                  <a href="/hyperbaric" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hyperbaric Chambers</a>
-                  <a href="/infrared" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Infrared</a>
-                  <a href="/massage-chairs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Massage Chairs</a>
-                  <a href="/fitness" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fitness</a>
-                </div>
-              </div>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/businesses">For Business</a>
-              <a className="text-sm text-cyan-400 border-b-2 border-cyan-400 pb-1" href="/financing">Financing</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/faq">FAQ</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/blog">Blog</a>
-              <a className="text-sm text-gray-500 hover:text-gray-700" href="/contact">Contact</a>
+            <div className="hidden lg:flex items-center gap-8">
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/">Home</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/products">Products</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/businesses">For Business</a>
+              <a className="text-sm font-medium text-gray-900" href="/financing">Financing</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
+              <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
-
-            {/* Cart & Mobile Menu */}
-            <div className="flex items-center gap-4">
-              <button className="p-2 text-gray-600 hover:text-gray-800">
-                <ShoppingCart className="w-5 h-5" />
-              </button>
-              <button className="lg:hidden p-2 text-gray-600 hover:text-gray-800">
-                <Menu className="w-6 h-6" />
-              </button>
-            </div>
+            <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Image */}
-      <section className="py-4">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg overflow-hidden">
-            <Image 
-              src="/images/financing-hero.jpg" 
-              alt="Wellness Equipment Financing" 
-              width={1200} 
-              height={400} 
-              className="w-full h-64 md:h-96 object-cover"
-            />
-          </div>
-        </div>
+      {/* Hero Banner */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/financing-hero.jpg" 
+          alt="Wellness Equipment Financing" 
+          fill
+          className="object-cover object-center"
+        />
       </section>
 
       {/* Financing Available Section */}
-      <section className="py-12 bg-white">
+      <section className="pt-20 pb-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Financing Available</h1>
           
