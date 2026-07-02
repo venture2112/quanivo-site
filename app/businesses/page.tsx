@@ -61,22 +61,28 @@ export default function Businesses() {
             <div className="relative rounded-lg overflow-hidden bg-gray-100">
               {/* Slider Images */}
               <div className="relative h-[55vh]">
-                {slides.map((slide, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-500 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  >
-                    <Image
-                      src={slide}
-                      alt={`Wellness Clinic Interior ${index + 1}`}
-                      fill
-                      className="object-cover object-[center_40%]"
-                      priority={index === 0}
-                    />
-                  </div>
-                ))}
+                {slides.map((slide, index) => {
+                  // Custom object positions: slides 2,3,4 (indexes 1,2,3) moved down 55%
+                  const objectPosition = index === 1 || index === 2 || index === 3 
+                    ? 'object-[center_95%]' 
+                    : 'object-[center_40%]';
+                  return (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-500 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <Image
+                        src={slide}
+                        alt={`Wellness Clinic Interior ${index + 1}`}
+                        fill
+                        className={`object-cover ${objectPosition}`}
+                        priority={index === 0}
+                      />
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Carousel Arrows */}
