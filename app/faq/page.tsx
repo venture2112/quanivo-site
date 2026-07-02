@@ -90,7 +90,7 @@ export default function FAQ() {
           src="/images/faq-hero.jpg" 
           alt="FAQ - Frequently Asked Questions" 
           fill
-          className="object-cover object-[center_55%]"
+          className="object-cover object-[center_45%]"
           priority
         />
       </section>
