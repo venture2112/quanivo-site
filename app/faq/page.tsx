@@ -85,7 +85,7 @@ export default function FAQ() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative w-full h-[400px] overflow-hidden">
+      <section className="relative w-full h-[450px] overflow-hidden">
         <Image 
           src="/images/faq-hero.jpg" 
           alt="FAQ - Frequently Asked Questions" 
