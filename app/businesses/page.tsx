@@ -60,7 +60,7 @@ export default function Businesses() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="relative rounded-lg overflow-hidden bg-gray-100">
               {/* Slider Images */}
-              <div className="relative h-[50vh]">
+              <div className="relative h-[55vh]">
                 {slides.map((slide, index) => (
                   <div
                     key={index}
