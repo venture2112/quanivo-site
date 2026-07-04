@@ -13,10 +13,13 @@ export default function AboutUs() {
               <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
             <div className="hidden lg:flex items-center gap-8">
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/">Home</a>
               <a className="text-sm font-medium text-gray-900" href="/about-us">About Us</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/bioresonance">Products</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/products">Products</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/businesses">For Business</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
               <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
             <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
@@ -26,7 +29,7 @@ export default function AboutUs() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="/images/about-hero.jpg"
