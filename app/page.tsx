@@ -15,10 +15,12 @@ export default function Home() {
             <div className="hidden lg:flex items-center gap-8">
               <a className="text-sm font-medium text-gray-900" href="/">Home</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/about-us">About Us</a>
-              <a className="text-sm text-gray-600 hover:text-gray-900" href="/bioresonance">Products</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/products">Products</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/businesses">For Business</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
-              <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
+              <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
             <button className="lg:hidden p-2"><Menu className="w-6 h-6" /></button>
           </div>
@@ -45,7 +47,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl text-white/90 mb-8">
               & More State of the Art Wellness Equipment for Business and Home
             </h2>
-            <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-lg px-10 py-4 hover:bg-blue-700">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-lg px-10 py-4 hover:bg-blue-700">
               Book Free Consultation
             </a>
           </div>
@@ -58,7 +60,7 @@ export default function Home() {
               <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
-                    <Image src="/images/product-shot-2.png" alt="Fitness" fill className="object-cover group-hover:scale-105 transition-transform" />
+                    <Image src="/images/fitness-category.jpg" alt="Fitness" fill className="object-cover group-hover:scale-105 transition-transform" />
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="font-semibold text-gray-900">Fitness</h3>
@@ -77,8 +79,8 @@ export default function Home() {
               </div>
               <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                  <div className="aspect-square relative">
-                    <Image src="/images/logo.png" alt="Hyperbaric" fill className="object-cover group-hover:scale-105 transition-transform" />
+                  <div className="aspect-square relative overflow-hidden">
+                    <Image src="/images/hyperbaric-home-v2.jpg" alt="Hyperbaric" fill className="object-cover object-[center_70%] scale-[1.35] group-hover:scale-[1.5] transition-transform" />
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="font-semibold text-gray-900">Hyperbaric</h3>
@@ -98,7 +100,7 @@ export default function Home() {
               <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
-                    <Image src="/images/icon-feature.png" alt="Bio-Resonance" fill className="object-cover group-hover:scale-105 transition-transform" />
+                    <Image src="/images/bioresonance-category.jpg" alt="Bio-Resonance" fill className="object-cover group-hover:scale-105 transition-transform" />
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="font-semibold text-gray-900">Bio-Resonance</h3>
@@ -108,7 +110,7 @@ export default function Home() {
               <div className="group">
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="aspect-square relative">
-                    <Image src="/images/benefits-chart.png" alt="Cryotherapy" fill className="object-cover group-hover:scale-105 transition-transform" />
+                    <Image src="/images/cryotherapy-category.jpg" alt="Cryotherapy" fill className="object-cover group-hover:scale-105 transition-transform" />
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="font-semibold text-gray-900">Cryotherapy</h3>
@@ -151,7 +153,7 @@ export default function Home() {
         {/* Product Line CTA */}
         <section className="py-20 bg-gray-900">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <a href="#contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-xl px-12 py-5 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
+            <a href="/contact" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-xl px-12 py-5 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
               View Our Product Line
             </a>
           </div>
@@ -162,7 +164,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900">Perfect For</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {['Luxury Homes', 'Wellness Enthusiasts', 'Fitness Facilities', 'Senior Communities', 'Cryotherapy Centers', 'Functional Medicine Providers', 'Wellness Clinics', 'Therapy Facilities', 'Athletes & Teams', 'Spas & Resorts'].map((item) => (
+              {['Luxury Homes', 'Wellness Enthusiasts', 'Fitness Facilities', 'Senior Communities', 'Cryotherapy Centers', 'Functional Medicine Providers', 'Wellness Clinics', 'Therapy Facilities', 'Athletes & Teams', 'Spas & Resorts', 'Medical Practices', 'Chiropractic Offices', 'Physical Therapy Centers', 'Yoga & Pilates Studios', 'Corporate Wellness', 'Health Clubs'].map((item) => (
                 <div key={item} className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
                   <h3 className="font-semibold text-gray-900">{item}</h3>
                 </div>
