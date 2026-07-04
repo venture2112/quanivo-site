@@ -46,6 +46,7 @@ export default function Businesses() {
               <a className="text-sm font-medium text-gray-900" href="/businesses">For Business</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/financing">Financing</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/faq">FAQ</a>
+              <a className="text-sm text-gray-600 hover:text-gray-900" href="/blog">Blog</a>
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/contact">Contact</a>
               <a href="/" className="inline-flex items-center justify-center rounded-lg bg-blue-600 text-white text-sm font-medium px-6 py-3 hover:bg-blue-700">Get Quote</a>
             </div>
