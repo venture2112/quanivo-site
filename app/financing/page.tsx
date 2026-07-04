@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sparkles, Menu, X, MessageCircle } from "lucide-react";
+import { Sparkles, Menu, X, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Financing() {
   return (
@@ -126,23 +126,47 @@ export default function Financing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-8 mt-auto">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-6">
-            <a href="/contact" className="hover:text-gray-900">Contact</a>
-            <a href="/privacy-policy" className="hover:text-gray-900">Privacy Policy</a>
-            <a href="/terms-and-conditions" className="hover:text-gray-900">Terms and Conditions</a>
-            <a href="/disclaimer" className="hover:text-gray-900">Disclaimer</a>
-            <a href="/refund-policy" className="hover:text-gray-900">Refund Policy</a>
-            <a href="/dmca" className="hover:text-gray-900">DMCA</a>
-            <a href="/cookies" className="hover:text-gray-900">Cookies</a>
-            <a href="/california-privacy" className="hover:text-gray-900">California Privacy</a>
-            <a href="/financing" className="hover:text-gray-900">Financing</a>
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles className="w-6 h-6 text-blue-400" />
+                <span className="text-xl font-bold">Quanivo</span>
+              </div>
+              <p className="text-gray-400">Quantum wellness solutions for businesses and homes.</p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/about-us" className="hover:text-white">About Us</a></li>
+                <li><a href="/products" className="hover:text-white">Products</a></li>
+                <li><a href="/businesses" className="hover:text-white">For Business</a></li>
+                <li><a href="/financing" className="hover:text-white">Financing</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Products</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/bioresonance" className="hover:text-white">Bioresonance</a></li>
+                <li><a href="/hyperbaric" className="hover:text-white">Hyperbaric</a></li>
+                <li><a href="/infrared" className="hover:text-white">Infrared</a></li>
+                <li><a href="/cryotherapy" className="hover:text-white">Cryotherapy</a></li>
+                <li><a href="/massage-chairs" className="hover:text-white">Massage Chairs</a></li>
+                <li><a href="/fitness" className="hover:text-white">Fitness</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Contact</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> 760-203-6399</li>
+                <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@quanivo.com</li>
+                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Carlsbad, CA 92011</li>
+              </ul>
+            </div>
           </div>
-          
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-cyan-500 mb-2">Quanivo Wellness</h3>
-            <p className="text-gray-500 text-sm">Copyright 2025. All rights reserved</p>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>© 2025 Quanivo Wellness. All rights reserved.</p>
           </div>
         </div>
       </footer>
