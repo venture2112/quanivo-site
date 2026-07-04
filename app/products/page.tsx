@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sparkles, Menu, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Sparkles, Menu, Phone, Mail, MapPin, ArrowRight, Wallet } from "lucide-react";
 
 const products = [
   {
@@ -150,10 +150,10 @@ export default function Products() {
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-8 h-8 text-blue-600" />
+                  <Wallet className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">White Glove Service</h3>
-                <p className="text-gray-600">From product selection to delivery, we ensure you get the most out of your investment. Professional installation and ongoing maintenance available with our White Glove Service package.</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Flexible Financing</h3>
+                <p className="text-gray-600">Make your wellness investment manageable with competitive financing options. We work with multiple lenders to find the best solution for your budget and business needs.</p>
               </div>
             </div>
           </div>
