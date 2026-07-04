@@ -7,7 +7,7 @@ const products = [
     name: "Bio-Resonance",
     description: "Quantum Bio-Wellness Energy Beds & Recliners featuring advanced bioresonance technology for cellular regeneration and holistic healing.",
     image: "/images/bioresonance-category-new.jpg",
-    features: ["Frequency Therapy", "Cellular Regeneration", "Stress Reduction", "Energy Balance"],
+    features: ["Quantum Energy Field", "Cellular Regeneration", "Stress Reduction", "Energy Balance"],
     href: "/bioresonance"
   },
   {
