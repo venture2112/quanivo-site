@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "../blog-data";
 import { notFound } from "next/navigation";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -35,6 +37,18 @@ export default async function BlogPostPage({ params }: PageProps) {
   
   if (!post) {
     notFound();
+  }
+  
+  // Try to read full content from scraped files
+  let fullContent = "";
+  try {
+    const contentPath = join(process.cwd(), "blog-content", `${slug}.html`);
+    fullContent = readFileSync(contentPath, "utf-8");
+    // Remove CDATA wrapper if present
+    fullContent = fullContent.replace(/<!\[CDATA\[/, "").replace(/\]\]>/, "");
+  } catch (e) {
+    // If file doesn't exist, use template content
+    fullContent = "";
   }
   
   // Get related posts (same category or recent)
@@ -91,96 +105,105 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="prose prose-lg max-w-none">
-          <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">
-            {post.excerpt}
-          </p>
+          {fullContent ? (
+            <div 
+              className="prose prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: fullContent }}
+            />
+          ) : (
+            <>
+              <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">
+                {post.excerpt}
+              </p>
 
-          <div className="bg-gray-50 rounded-xl p-8 mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">1</span>
-                <span className="text-gray-700">Understanding the fundamentals of {post.category.toLowerCase()} and its applications</span>
-              </li>
-              <li className="flex items-start">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">2</span>
-                <span className="text-gray-700">Practical strategies for implementing these insights in your wellness routine</span>
-              </li>
-              <li className="flex items-start">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">3</span>
-                <span className="text-gray-700">Evidence-based approaches to enhance your overall well-being</span>
-              </li>
-            </ul>
-          </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
-            Understanding {post.category}
-          </h2>
-          
-          <p className="text-gray-700 mb-6">
-            {post.category} represents a significant advancement in holistic health approaches. 
-            By integrating modern technology with time-tested wellness principles, practitioners 
-            and individuals alike can achieve remarkable improvements in their health outcomes.
-          </p>
-
-          <p className="text-gray-700 mb-6">
-            The field continues to evolve as research reveals new connections between energy, 
-            biology, and overall wellness. This article explores the current state of knowledge 
-            and practical applications for those seeking to enhance their health journey.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
-            Benefits and Applications
-          </h2>
-
-          <div className="bg-gray-50 rounded-xl p-6 mb-8">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">Improved Wellness</h3>
-                <p className="text-sm text-gray-600">Enhanced overall health and vitality</p>
+              <div className="bg-gray-50 rounded-xl p-8 mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">1</span>
+                    <span className="text-gray-700">Understanding the fundamentals of {post.category.toLowerCase()} and its applications</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">2</span>
+                    <span className="text-gray-700">Practical strategies for implementing these insights in your wellness routine</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0abab5]/10 text-[#0abab5] mr-3 mt-0.5 flex-shrink-0 text-sm font-bold">3</span>
+                    <span className="text-gray-700">Evidence-based approaches to enhance your overall well-being</span>
+                  </li>
+                </ul>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">Holistic Support</h3>
-                <p className="text-sm text-gray-600">Comprehensive mind-body benefits</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">Enhanced Energy</h3>
-                <p className="text-sm text-gray-600">Improved vitality and focus</p>
-              </div>
-            </div>
-          </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
-            Implementation Strategies
-          </h2>
-          
-          <p className="text-gray-700 mb-6">
-            Successfully integrating these wellness practices requires a thoughtful approach. 
-            Start by assessing your current routine and identifying areas where these techniques 
-            can provide the most benefit. Consider consulting with wellness professionals who 
-            can guide your implementation.
-          </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
+                Understanding {post.category}
+              </h2>
+              
+              <p className="text-gray-700 mb-6">
+                {post.category} represents a significant advancement in holistic health approaches. 
+                By integrating modern technology with time-tested wellness principles, practitioners 
+                and individuals alike can achieve remarkable improvements in their health outcomes.
+              </p>
 
-          <p className="text-gray-700 mb-6">
-            Consistency is key. Whether you&apos;re incorporating these practices at home or 
-            in a professional setting, regular application yields the best results. Track your 
-            progress and adjust your approach based on your individual response.
-          </p>
+              <p className="text-gray-700 mb-6">
+                The field continues to evolve as research reveals new connections between energy, 
+                biology, and overall wellness. This article explores the current state of knowledge 
+                and practical applications for those seeking to enhance their health journey.
+              </p>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
+                Benefits and Applications
+              </h2>
+
+              <div className="bg-gray-50 rounded-xl p-6 mb-8">
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">Improved Wellness</h3>
+                    <p className="text-sm text-gray-600">Enhanced overall health and vitality</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">Holistic Support</h3>
+                    <p className="text-sm text-gray-600">Comprehensive mind-body benefits</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-[#0abab5]/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#0abab5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">Enhanced Energy</h3>
+                    <p className="text-sm text-gray-600">Improved vitality and focus</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
+                Implementation Strategies
+              </h2>
+              
+              <p className="text-gray-700 mb-6">
+                Successfully integrating these wellness practices requires a thoughtful approach. 
+                Start by assessing your current routine and identifying areas where these techniques 
+                can provide the most benefit. Consider consulting with wellness professionals who 
+                can guide your implementation.
+              </p>
+
+              <p className="text-gray-700 mb-6">
+                Consistency is key. Whether you&apos;re incorporating these practices at home or 
+                in a professional setting, regular application yields the best results. Track your 
+                progress and adjust your approach based on your individual response.
+              </p>
+            </>
+          )}
 
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">
             Frequently Asked Questions
