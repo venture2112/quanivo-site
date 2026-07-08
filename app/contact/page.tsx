@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, Menu, Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Menu, Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,7 +34,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a className="flex items-center gap-2" href="/">
-              <Sparkles className="w-8 h-8 text-blue-600" />
+              <Image src="/images/logo-new.jpg" alt="Quanivo" width={40} height={40} className="rounded" />
               <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
             <div className="hidden lg:flex items-center gap-8">
@@ -230,7 +230,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-blue-400" />
+                <Image src="/images/logo-new.jpg" alt="Quanivo" width={32} height={32} className="rounded" />
                 <span className="text-xl font-bold">Quanivo</span>
               </div>
               <p className="text-gray-400">Quantum wellness solutions for businesses and homes.</p>

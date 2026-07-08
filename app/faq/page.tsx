@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, Menu, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
+import { Menu, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -66,7 +66,7 @@ export default function FAQ() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a className="flex items-center gap-2" href="/">
-              <Sparkles className="w-8 h-8 text-blue-600" />
+              <Image src="/images/logo-new.jpg" alt="Quanivo" width={40} height={40} className="rounded" />
               <span className="text-2xl font-bold text-gray-900">Quanivo</span>
             </a>
             <div className="hidden lg:flex items-center gap-8">
