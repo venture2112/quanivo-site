@@ -65,9 +65,9 @@ export default function FAQ() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <a className="flex items-center gap-2" href="/">
+            <a className="flex items-center" href="/">
               <Image src="/images/logo-new.jpg" alt="Quanivo" width={40} height={40} className="rounded" />
-              <span className="text-2xl font-bold text-gray-900">Quanivo</span>
+              
             </a>
             <div className="hidden lg:flex items-center gap-8">
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/">Home</a>

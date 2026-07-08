@@ -35,9 +35,9 @@ export default function Businesses() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <a className="flex items-center gap-2" href="/">
+            <a className="flex items-center" href="/">
               <Image src="/images/logo-new.jpg" alt="Quanivo" width={40} height={40} className="rounded" />
-              <span className="text-2xl font-bold text-gray-900">Quanivo</span>
+              
             </a>
             <div className="hidden lg:flex items-center gap-8">
               <a className="text-sm text-gray-600 hover:text-gray-900" href="/">Home</a>
@@ -238,14 +238,14 @@ export default function Businesses() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center mb-4">
                 <div className="w-8 h-8 relative">
                   <svg viewBox="0 0 40 40" className="w-full h-full">
                     <circle cx="20" cy="20" r="15" fill="#56CCF2" />
                     <path d="M20 5 Q32 20 20 35 Q8 20 20 5" fill="none" stroke="white" strokeWidth="3" />
                   </svg>
                 </div>
-                <span className="text-xl font-semibold text-gray-800">Quanivo</span>
+
               </div>
               <p className="text-gray-500 text-sm">Quantum wellness solutions for businesses and homes.</p>
             </div>
