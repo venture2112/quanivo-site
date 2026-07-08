@@ -95,16 +95,22 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="prose prose-lg max-w-none">
-          {fullContent ? (
-            <div 
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: fullContent }}
-            />
-          ) : (
-            <>
-              <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">
-                {post.excerpt}
-              </p>
+          {/* Excerpt / Summary */}
+          <div className="bg-gradient-to-br from-[#0abab5]/5 to-white rounded-xl p-8 mb-8 border border-[#0abab5]/10">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Article Summary</h2>
+            <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+              {post.excerpt}
+            </p>
+            <Link 
+              href={`/blog/${slug}/full`}
+              className="inline-flex items-center px-6 py-3 bg-[#0abab5] text-white font-medium rounded-lg hover:bg-[#09a8a3] transition-colors"
+            >
+              Read Full Story
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
 
               <div className="bg-gray-50 rounded-xl p-8 mb-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
