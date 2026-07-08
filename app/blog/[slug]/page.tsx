@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.excerpt}
             </p>
             <Link 
-              href={`/blog/${slug}/full`}
+              href={`/blog/full/${slug}`}
               className="inline-flex items-center px-6 py-3 bg-[#0abab5] text-white font-medium rounded-lg hover:bg-[#09a8a3] transition-colors"
             >
               Read Full Story
