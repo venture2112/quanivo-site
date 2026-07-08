@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "../blog-data";
 import { notFound } from "next/navigation";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { blogContent } from "../content";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -39,17 +38,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
   
-  // Try to read full content from scraped files
-  let fullContent = "";
-  try {
-    const contentPath = join(process.cwd(), "blog-content", `${slug}.html`);
-    fullContent = readFileSync(contentPath, "utf-8");
-    // Remove CDATA wrapper if present
-    fullContent = fullContent.replace(/<!\[CDATA\[/, "").replace(/\]\]>/, "");
-  } catch (e) {
-    // If file doesn't exist, use template content
-    fullContent = "";
-  }
+  // Get full content from content mapping
+  const fullContent = blogContent[slug] || "";
   
   // Get related posts (same category or recent)
   const relatedPosts = blogPosts
