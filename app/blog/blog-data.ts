@@ -31,6 +31,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "bio-wellness-energy-beds-chronic-pain-management",
+    content: "",
     title: "Using Bio Wellness Energy Beds For Chronic Pain Management",
     excerpt: "Discover how energy therapy beds can provide non-invasive pain relief and support chronic pain management protocols in clinical settings.",
     category: "Pain Management",
