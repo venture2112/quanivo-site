@@ -141,27 +141,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="bg-gray-50 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Stay Updated on Wellness Innovation
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Subscribe to our newsletter for the latest insights on energy therapy, holistic health, and wellness technology.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0abab5]"
-            />
-            <button className="px-6 py-3 bg-[#0abab5] text-white font-medium rounded-lg hover:bg-[#09a8a3] transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </section>
       </main>
 
       {/* Footer */}
