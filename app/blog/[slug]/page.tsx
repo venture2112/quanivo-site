@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "../blog-data";
 import { notFound } from "next/navigation";
-import { blogContent } from "../content";
+
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -38,8 +38,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
   
-  // Get full content from content mapping
-  const fullContent = blogContent[slug] || "";
+  // Get full content from blog post data
+  const fullContent = post.content || "";
   
   // Get related posts (same category or recent)
   const relatedPosts = blogPosts
