@@ -250,9 +250,54 @@ export default async function FullArticlePage({ params }: PageProps) {
       {/* Full Article Content */}
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div 
-          className="prose prose-lg max-w-none"
+          className="article-content"
           dangerouslySetInnerHTML={{ __html: articleContent }}
         />
+        <style jsx>{`
+          .article-content {
+            line-height: 1.8;
+            color: #374151;
+          }
+          .article-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            line-height: 1.2;
+          }
+          .article-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            line-height: 1.3;
+          }
+          .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+            margin-top: 2rem;
+          }
+          .article-content p {
+            margin-bottom: 1.25rem;
+            margin-top: 1.25rem;
+          }
+          .article-content ul {
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+          }
+          .article-content li {
+            margin-bottom: 0.5rem;
+          }
+          .article-content strong {
+            color: #111827;
+            font-weight: 600;
+          }
+        `}</style>
         
         <div className="bg-gray-50 rounded-xl p-8 mt-12">
           <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to Learn More?</h3>
