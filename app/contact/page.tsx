@@ -14,10 +14,25 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    setSubmitted(true);
+    
+    // Submit to FormSubmit
+    const form = e.target as HTMLFormElement;
+    const formDataObj = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formsubmit.co/hello@quanivo.com', {
+        method: 'POST',
+        body: formDataObj
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -78,7 +93,10 @@ export default function Contact() {
                     <p className="text-gray-600">We&apos;ve received your message and will get back to you within 24 hours.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} action="https://formsubmit.co/hello@quanivo.com" method="POST" className="space-y-6">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Quanivo" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://quanivo.com/contact?submitted=true" />
                     <div>
                       <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
                         How can we help you? *
