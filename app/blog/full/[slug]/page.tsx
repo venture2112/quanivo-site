@@ -37,43 +37,35 @@ export default async function FullArticlePage({ params }: PageProps) {
     notFound();
   }
 
-  // Full article content mapping
+  // Full article content mapping with actual scraped content
   const fullArticles: Record<string, string> = {
-    "integrating-bio-wellness-energy-beds": `<h2>Integrating Bio Wellness Energy Beds Into Your Wellness Clinic</h2>
-<p>Integrating Bio Wellness Energy Beds into a wellness clinic can enhance patient care and support better treatment outcomes. These beds employ targeted energy therapy intended to promote relaxation, support sleep quality, and contribute to overall well-being.</p>
-<h3>What Is a Bio Wellness Energy Bed?</h3>
-<p>The Bio Wellness Energy Bed is a therapeutic system that combines multiple wellness technologies to support general well-being. It integrates energy therapy, bioresonance technology, and infrared heat therapy to provide a comprehensive relaxation experience.</p>
-<h3>Understanding Energy Therapy Principles</h3>
-<p>Energy therapy principles adopt a holistic perspective on health, emphasizing balanced energy flow within the body. The Bio Wellness Energy Bed applies these principles to address energy blockages and promote relaxation, which may support the body's natural healing processes.</p>
-<h3>Key Benefits for Your Clinic</h3>
+    "integrating-bio-wellness-energy-beds": `<h1>Integrating Bio Wellness Energy Beds Into Your Wellness Clinic</h1>
+<p><strong>Integrating Bio Wellness Energy Beds into a wellness clinic can enhance patient care and support better treatment outcomes. These beds employ targeted energy therapy intended to promote relaxation, support sleep quality, and contribute to overall well-being.</strong></p>
+<h2>To integrate Bio Wellness Energy Beds into your clinic, consider the following steps:</h2>
+<p><strong>Successful integration of Bio Wellness Energy Beds requires planning across clinical, operational, and spatial domains to ensure consistent delivery and patient comfort.</strong></p>
 <ul>
-<li><strong>Enhanced Patient Outcomes:</strong> Support relaxation and recovery for better treatment results</li>
-<li><strong>Revenue Generation:</strong> Create new service offerings and revenue streams</li>
-<li><strong>Competitive Advantage:</strong> Differentiate your clinic with cutting-edge wellness technology</li>
-<li><strong>Patient Retention:</strong> Provide unique services that keep patients coming back</li>
+<li><strong>Assess Your Needs:</strong> Evaluate the specific needs of your clinic and patient demographics.</li>
+<li><strong>Choose the Right Model:</strong> Select a model that aligns with your clinic's goals.</li>
+<li><strong>Space Planning:</strong> Ensure adequate space for patient comfort and accessibility.</li>
 </ul>
-<h3>Implementation Steps</h3>
-<p>Successful integration of Bio Wellness Energy Beds requires planning across clinical, operational, and spatial domains to ensure consistent delivery and patient comfort.</p>
-<h4>1. Assess Your Space</h4>
-<p>Evaluate your clinic layout to determine the best location for the energy bed. Consider privacy, accessibility, and creating a calming environment.</p>
-<h4>2. Staff Training</h4>
-<p>Ensure your staff understands how to operate the equipment and can explain the benefits to patients. Proper training leads to better patient experiences.</p>
-<h4>3. Marketing Integration</h4>
-<p>Promote your new service through your website, social media, and in-clinic materials. Educate existing patients about the benefits.</p>
-<h3>Clinical Applications</h3>
-<p>Bio Wellness Energy Beds can be integrated into various treatment protocols:</p>
+<h2>What Is Energy Therapy?</h2>
+<p><strong>Energy therapy is a holistic approach that employs specific techniques and devices to support the body's self-regulatory processes.</strong></p>
+<h2>Key Benefits for Your Clinic</h2>
 <ul>
-<li>Pre-treatment relaxation to enhance therapy effectiveness</li>
-<li>Post-treatment recovery support</li>
+<li><strong>Stress Reduction:</strong> Help alleviate stress and anxiety</li>
+<li><strong>Holistic Wellness Support:</strong> Promote overall health by enhancing energy flow</li>
+<li><strong>Enhanced Treatment Offerings:</strong> Attract new patients with innovative therapies</li>
+</ul>
+<h2>Clinical Applications</h2>
+<p>Bio Wellness Energy Beds can support:</p>
+<ul>
+<li>Pre-treatment relaxation</li>
+<li>Post-treatment recovery</li>
 <li>Standalone wellness sessions</li>
 <li>Complementary therapy for stress management</li>
 </ul>
-<h3>Patient Experience</h3>
-<p>Patients typically report feeling deeply relaxed and rejuvenated after sessions. The non-invasive nature of the therapy makes it suitable for a wide range of patients, from those seeking stress relief to those recovering from injuries.</p>
-<h3>Return on Investment</h3>
-<p>Clinics that integrate Bio Wellness Energy Beds often see increased patient satisfaction, higher retention rates, and additional revenue streams. The initial investment can typically be recovered within 12-18 months through service fees.</p>
-<h3>Conclusion</h3>
-<p>Integrating Bio Wellness Energy Beds into a wellness clinic can enhance care delivery by supporting relaxation, sleep quality, and overall wellbeing. With proper planning and implementation, this technology can become a valuable addition to your service offerings.</p>`,
+<h2>Conclusion</h2>
+<p><strong>Integrating Bio Wellness Energy Beds into a wellness clinic can enhance care delivery by supporting relaxation, sleep quality, and overall wellbeing.</strong></p>`,
     "sleeping-tips-your-way-to-sweet-dreams": `<h2>Sleeping Tips: Your Way to Sweet Dreams</h2>
 <p>Getting a good night's sleep is essential for your overall health and well-being. Quality sleep affects your physical health, mental clarity, emotional balance, and daily productivity.</p>
 <h3>1. Establish a Consistent Bedtime Routine</h3>
