@@ -232,7 +232,16 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>© 2025 Quanivo Wellness. All rights reserved.</p>
+            <p>© 2025-2026 Quanivo Wellness. All rights reserved.</p>
+            <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
+              <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+              <a href="/refund" className="hover:text-white transition-colors">Refund</a>
+              <a href="/dmca" className="hover:text-white transition-colors">DMCA</a>
+              <a href="/cookies" className="hover:text-white transition-colors">Cookies</a>
+              <a href="/california-privacy" className="hover:text-white transition-colors">CCPA</a>
+              <a href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</a>
+            </div>
           </div>
         </div>
       </footer>
