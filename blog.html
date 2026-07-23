@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Quanivo Wellness</title>
+  <meta name="description" content="Latest insights on wellness technology, quantum healing, bioresonance therapy, and holistic health from Quanivo Wellness experts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; line-height: 1.6; color: #333; }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+    
+    /* Navigation */
+    .navbar {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: #667eea; text-decoration: none; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s; font-size: 0.95rem; }
+    .nav-links a:hover { color: #667eea; }
+    .mobile-menu { display: none; cursor: pointer; }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* Blog Section */
+    .blog-section {
+      padding: 80px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-card-content {
+      padding: 2rem;
+    }
+    .blog-card .category {
+      color: #667eea;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .blog-card h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: #000;
+    }
+    .blog-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .blog-card .read-more {
+      color: #667eea;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .blog-card .date {
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    
+    /* Featured Post */
+    .featured-post {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .featured-post h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    .featured-post p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    .btn-primary {
+      background: #667eea;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 60px 2rem 30px;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+    .footer-section a {
+      color: #aaa;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .footer-section a:hover { color: #fff; }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu { display: block; }
+      .hero h1 { font-size: 2rem; }
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Quanivo</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="for-business.html">For Business</a></li>
+      <li><a href="residential.html">For Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-menu">☰</div>
+  </nav>
+
+  <section class="hero">
+    <h1>Wellness Insights</h1>
+    <p>Explore the latest research, tips, and trends in wellness technology, quantum healing, and holistic health.</p>
+  </section>
+
+  <section class="blog-section">
+    <div class="featured-post">
+      <div>
+        <span class="category" style="color: #667eea; font-weight: 600;">Featured</span>
+        <h2>Understanding Quantum Wellness: The Future of Healing</h2>
+        <p>Quantum wellness represents a paradigm shift in how we approach health and healing. By understanding the body as an energetic system operating at the quantum level, we can unlock new pathways to optimal wellness...</p>
+        <a href="#" class="btn-primary">Read Article</a>
+      </div>
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 250px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+        Quantum Wellness
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Technology</span>
+          <h2>The Science Behind Bioresonance Therapy</h2>
+          <p>Bioresonance therapy uses electromagnetic frequencies to detect and treat imbalances in the body. Learn how this cutting-edge technology works...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">December 15, 2024</div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Wellness</span>
+          <h2>5 Benefits of PEMF Therapy for Athletes</h2>
+          <p>Professional athletes are turning to PEMF therapy for faster recovery, reduced inflammation, and enhanced performance. Discover the benefits...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">December 10, 2024</div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Business</span>
+          <h2>Adding Wellness Services to Your Spa</h2>
+          <p>Learn how wellness equipment can increase revenue and customer satisfaction at your spa or wellness center...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">December 5, 2024</div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Health</span>
+          <h2>Infrared Therapy: A Complete Guide</h2>
+          <p>Everything you need to know about far-infrared therapy, from how it works to its numerous health benefits...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">November 28, 2024</div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Research</span>
+          <h2>New Studies on Electromagnetic Field Therapy</h2>
+          <p>Recent research reveals promising results for electromagnetic field therapy in treating chronic pain and inflammation...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">November 20, 2024</div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="category">Home</span>
+          <h2>Creating Your Personal Wellness Sanctuary</h2>
+          <p>Tips for designing a home wellness space that promotes relaxation, healing, and daily rejuvenation...</p>
+          <a href="#" class="read-more">Read More →</a>
+          <div class="date">November 15, 2024</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quanivo Wellness</h3>
+        <p>State-of-the-art wellness equipment for business and home.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="technology.html">Technology</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: info@quanivowellness.com</p>
+        <p>Phone: (888) 555-0123</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Quanivo Wellness. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
